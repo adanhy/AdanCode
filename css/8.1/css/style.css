@@ -1,0 +1,66 @@
+.btn-flat{
+    background-color: hsl(120, 68%, 71%);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: bold;
+    color: white;
+    width: 100px;
+    height: 60px;
+    border: none;
+}
+
+.btn-flat:hover{
+    background-color: rgb(56, 153, 61);
+
+}
+
+
+.btn-rnd{
+    background-color: hsl(39, 95%, 63%);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: bold;
+    color: white;
+    width: 100px;
+    height: 60px;
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-rnd:hover{
+    background-color: hsl(39, 74%, 45%);;
+
+}
+.btn-flat-g{
+    background-color:transparent;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: bold;
+    color: white;
+    width: 100px;
+    height: 60px;
+    border:1px solid red;
+  
+}
+
+.btn-flat-g:hover{
+    background-color:red;
+
+}
+.btn-rnd-g{
+    background-color:transparent;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: bold;
+    color: white;
+    width: 100px;
+    height: 60px;
+    border: 1px solid turquoise;
+    border-radius: 50px;
+}
+
+.btn-rnd-g:hover{
+    background-color:turquoise;
+
+}
+
+body{
+    padding: 10px auto;
+    background-color: rgb(32, 32, 70);
+}
