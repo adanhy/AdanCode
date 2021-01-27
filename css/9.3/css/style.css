@@ -1,0 +1,59 @@
+#outer {
+    width: 100px;
+    height: 100px;
+    background: darkcyan;
+    margin: 50px;
+    font-size: 25px;
+    
+    }
+    #inner {
+    width: 50px;
+    height: 50px;
+    background: lightgreen;
+    position: relative;
+    top: 10px;
+    }
+
+div{
+    position: absolute;
+    border: 3px solid black;
+    background: white;
+}
+
+
+#div1{
+    background: rgb(69, 69, 160);
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+}
+
+#div2{
+    background: rgb(252, 175, 33);
+    width: 170px;
+    height: 170px;
+    top: 170px;
+    left: 100px;
+    z-index: 2;
+}
+
+#div3{
+    background: rgb(51, 212, 51);
+    width: 400px;
+    height: 100px;
+    top: 300px;
+    z-index: 3;
+}
+
+#div4{
+    background: peru;
+    width: 100px;
+    height: 500px;
+    /* top: 170px; */
+    left: 300px;
+    z-index: 4;
+}
+
+div:hover{
+    font-size: 25px;
+}
