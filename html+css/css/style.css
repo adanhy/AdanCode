@@ -1,0 +1,349 @@
+/* reset */
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+    max-height: 100vh;
+    font-family: "Gotham";
+
+}
+
+section{
+    border: 1px solid red;
+
+}
+
+.container{
+    border: 1px solid lime;
+    /* width: 100%; */
+}
+
+.header{
+    display: inline-block;
+}
+
+.full-screen{
+    width: 100%;
+    height: 100vh;
+    
+}
+
+#model3{
+    background: url('../img/model3hawkeye.jfif');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 1%;
+}
+
+#logo-box{
+    display: inline-block;
+    width: 10%;
+    border: 1px solid white;
+    
+}
+
+#logo{
+    position: fixed;
+     top:2%;
+     left: 2%;
+     width: 7%;
+     /* margin-left: 1%; */
+}
+
+.header a{
+    padding: 0px 1%;
+}
+
+#middle-header{
+
+    display: inline-block;
+    border: 1px solid yellow;
+    width: 50%;
+    padding-left: 13%;
+    
+}
+
+#right-header{
+    display: block;
+    padding-left:17%;
+    width: 33%;
+    border: 1px solid salmon;
+    display: inline-block;
+    /* vertical-align: right; */
+}
+
+ a{
+    text-decoration: none;
+    color: white;
+}
+
+#chat-icon{
+
+    position: fixed;
+    top:85%;
+    left: 95%;
+
+    background-color: white;
+    
+    /* padding: 0.8%; */    
+    /* font-size: .7em !important; */
+}
+
+#chatbox{
+
+   border: none;
+   box-shadow: 0 1px 4px 0;
+    position: fixed;
+    top:85%;
+    left: 95%;
+    background: url("../img/talk.svg") no-repeat center;
+    background-color: white;
+    align-content: center;
+    min-width: 52px;
+    min-height: 52px;
+    display: flex;
+    border-radius: 100%;
+
+}
+
+.container h1{
+    color: white;
+    text-align: center;
+    padding-top: 3%;
+    font-size: 40px;
+}
+
+#cube_4 .cube{
+    width: 20%;
+    height: 20%;
+    display: inline-block;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+#cube_4{
+    padding-left: 20%;
+    padding-top: 30%;
+}
+
+.mdl{
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.wt-order-btn{
+    color: white;
+    font-size: 16px;
+    background-color:none;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 10px 5px;
+    width: 100%;
+    white-space: nowrap;
+    /* height: 100%; */
+}
+
+.wt-order-btn:hover{
+    color: black;
+    background-color:white ;
+}
+
+.blk-order-btn{
+    color: black;
+    font-size: 16px;
+    background-color:white;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px 5px;
+    width: 100%;
+    white-space: nowrap;
+    /* height: 100%; */
+}
+
+.blk-order-btn:hover{
+    color: white;
+    background-color:black;
+}
+
+.upsec{
+    font-size: 30px;
+}
+
+.downsec{
+    font-size: 12px;
+}
+
+
+#safety{
+    background:url("../img/model_3_safety_hero.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#left-cube{
+
+    background-color: white;
+    height: 100%;
+    width: 25%;
+}
+
+#left-cube h1, #left-cube h2, #left-cube h3, #left-cube h4,#left-cube p{
+    font-style: normal;
+    max-width: 90%;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 10px;
+    left: 2%;
+}
+
+#left-cube h1{
+    font-size: 30px;
+}
+
+#grey-cube{
+    margin: 10% 10%;
+    border-radius: 10px;
+    background-color: rgba(180, 158, 158, 0.479);
+    padding: 2%;
+    height: 30%
+}
+
+#grey-cube h3{
+text-align: center;
+/* padding: 0; */
+}
+
+.upleft{
+    display:  inline-block;
+    /* float: left; */
+    width: 50%;
+
+    padding-left: 10%;
+    /* max-width: 50%; */
+    /* border: 2px solid violet; */
+    /* margin-right: 50%; */
+     /* width: 50px; */
+}
+
+.upright{
+
+    display:  inline-block;
+    /* width: 50%;  */
+    /* max-width: 50%; */
+}
+
+#plus-btn{
+   
+    background-color: white;   
+    border-radius: 100%;
+    color: black;
+    border: 3px solid black;
+    padding: 3%;
+}
+
+#plus-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+.bottom-safety{
+    align-content: center;
+    margin-left: 10%;
+}
+
+#per-btn{
+    background-color: white;
+    color: black;
+    padding: 3px;
+    border: 3px solid black;
+    border-radius: 100%;
+    
+}
+
+
+#performance{
+    background:url("../img/lhd-performance-hero-desktop10801920.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#per-top{
+    padding-top: 30%;
+    color: white;
+    height: 75%;
+    padding-left: 10%;
+
+}
+
+#per-bottom{
+    height: 25%;
+    background-color: white;
+}
+
+.per-cube{
+    width: 33%;
+    display: inline-block;
+
+}
+
+.per-cube-info{
+    display: inline-block;
+    width: 33%;
+    height: 75%;
+    margin-left: 10%;
+    border:1px solid green;
+}
+
+.per-cube-info h1{
+font-size: 30px;
+
+}
+
+.per-btn{
+    display: inline-block;
+
+}
+
+
+#all-wheel-drive{
+    background:url("../img/");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#range{
+    background: black;
+}
+
+#autopilot{
+    background: blue;
+}
+
+#interior{
+    background: black;
+}
+
+#specs{
+    background: blue;
+}
+
+#order{
+    background: black;
+}
