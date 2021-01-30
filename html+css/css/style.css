@@ -14,15 +14,15 @@ html{
 
 }
 
-section{
+/* section{
     border: 1px solid red;
 
-}
+} */
 
-.container{
-    border: 1px solid lime;
-    /* width: 100%; */
-}
+/* .container{
+    border: 1px solid lime; */
+    /* width: 100%;
+} */
 
 .header{
     display: inline-block;
@@ -46,7 +46,7 @@ section{
 #logo-box{
     display: inline-block;
     width: 10%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     
 }
 
@@ -65,7 +65,7 @@ section{
 #middle-header{
 
     display: inline-block;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     width: 50%;
     padding-left: 13%;
     
@@ -75,7 +75,7 @@ section{
     display: block;
     padding-left:17%;
     width: 33%;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     display: inline-block;
     /* vertical-align: right; */
 }
@@ -306,7 +306,7 @@ text-align: center;
     width: 33%;
     height: 75%;
     margin-left: 10%;
-    border:1px solid green;
+    /* border:1px solid green; */
 }
 
 .per-cube-info h1{
