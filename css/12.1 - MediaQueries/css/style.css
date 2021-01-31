@@ -1,0 +1,40 @@
+
+
+h1{
+    font-size: 15em;
+}
+
+p{
+    font-size: 10em;
+}
+
+
+@media (min-width:800px){
+
+    h1{
+        font-size: 7em;
+        color: red;
+    }
+
+
+    p{
+        font-size: 3em;
+        color: seagreen;
+    }
+
+
+}
+
+@media (max-width:600px){
+
+    h1{
+        font-size: 2em;
+        color: orange
+    }
+
+    p{
+        font-size: 1em;
+        color: orangered;
+    }
+
+}

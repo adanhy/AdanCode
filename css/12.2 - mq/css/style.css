@@ -1,0 +1,17 @@
+section{
+    display: inline;
+    border: 1px solid red;
+    font-size: 2em;
+}
+
+
+
+
+@media (max-width:600px){
+
+   section{
+       display: inline-block;
+       color: blue;
+   }
+
+}
