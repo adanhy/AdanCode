@@ -1,3 +1,4 @@
+
 section{
     display: inline;
     border: 1px solid red;
@@ -5,13 +6,9 @@ section{
 }
 
 
-
-
 @media (max-width:600px){
-
    section{
        display: inline-block;
        color: blue;
    }
-
 }
