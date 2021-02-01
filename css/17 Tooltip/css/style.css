@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    margin: 3% 25%;
+}
+
+
+
+ .tool {
+    position: relative;
+    color: navy;
+  } 
+  
+  .tool:hover {
+    background-color: yellow;
+    font-weight: bold;
+    color: red;
+    
+  }
+  
+  .tool:hover:after {
+    background: rgb(22, 43, 233, 0.77);
+    border-radius: 1em;
+    bottom: 1.35em;
+    color: white;
+    content: attr(extra-txt); /* IMPORTANT: this is the content from the HTML element*/
+    display: block;
+    left: 100%;
+    padding: 10% 20%;
+    position: absolute;
+    white-space: nowrap;
+  }

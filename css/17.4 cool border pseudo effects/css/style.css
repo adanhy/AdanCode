@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    background-color: #444;
+}
+
+
+.pbox{
+    
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color:teal;
+    border: 4px solid tomato;
+    margin: 5%;
+    
+}
+
+/* for width */
+ .pbox:before{
+    
+    content: "";
+    position: absolute;
+    background-color:teal;
+    border: none;
+    width: 508px;
+    height:450px;
+     top:20px ;  
+     left: -4px; 
+} 
+
+/* for height */
+ .pbox:after{
+    
+    content: "";
+    border: none;
+    position: absolute;
+    background-color:teal;
+    
+    width: 450px;
+    height: 508px;
+    left: 25px; 
+    top: -4px;
+}
+
+
+
+
+
+/* 
+
+.pbox:hover{
+
+background-color: turquoise;
+
+} */
+
