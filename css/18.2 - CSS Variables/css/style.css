@@ -1,0 +1,91 @@
+
+/* VARIABLES IN ROOT SO WE CAN ACCESS THEM FROM EVERYWHERE */
+
+:root{
+  --bg-color:rgb(35, 185, 43);
+  --card-color:#447474;
+  --footer-color:red;
+  --header-color:orange;
+  --main-font:'Crimson Pro', serif;
+   --other-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+
+
+.card{
+  float: right;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 80%;
+  display: block;
+  align-self: center;
+border: 1px solid grey;
+}
+
+.infoBox h3{
+  font-family: var(--main-font);
+  font-size: 30px;
+}
+
+body{
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100%;
+  
+}
+
+.card p{
+  font-family: var(--main-font);
+  font-size: 25px;
+  border: 2px strong black;
+}
+
+.infoBox {
+  background-color: var(--card-color);
+  text-align: center;
+  padding: 10px;
+  font-family:var(--other-font);
+}
+
+h4{
+  font-size: 20px;
+}
+
+#header{
+  background-color:var(--header-color);
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 1% 0%;
+}
+
+.container{
+  max-width: 80%;
+padding: 10px auto;
+margin: 5% auto;
+}
+
+.letfbox{
+  font-size: 30px;
+  height: 613px;
+  max-width: 15%;
+  float: left;
+  border: 2px solid black;
+  text-align: center;
+  /* padding: 5px; */
+  /* height: auto; */
+  
+}
+
+.clr{
+  clear: both;
+}
+
+footer{
+  background-color: var(--footer-color);
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 1% 0%;
+}

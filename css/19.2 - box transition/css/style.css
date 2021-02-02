@@ -1,0 +1,53 @@
+:root{
+    --bg-color:rgb(50, 168, 125);
+    --box-color:rgb(164, 50, 168);
+    --box-before-color: brown;
+    --after-color:limegreen;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;    
+}
+
+
+.container{
+    margin: 200px 400px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: var(--box-before-color);
+    /* overflow: hidden; */
+}
+
+
+
+.box{
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--box-color);
+    transform: translateX(-200px);
+    transition: 2s;
+
+}
+
+.container:hover > .box{
+
+    transform:translateX(0);
+    background-color: var(--bg-color);
+
+}
+
+
+
+
+
