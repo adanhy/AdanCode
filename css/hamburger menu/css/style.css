@@ -1,0 +1,82 @@
+
+
+/* VARIABLES */
+:root{
+
+    --color1: rgba(27, 146, 52, 0.5); /*primary color*/
+    --color2: rgba(128, 0, 21, 0.8); /*secondary color*/
+    --color3: rgba(24,39,51.0.9); /*orerlay color on bg image*/
+    --color4: rgb(50, 115, 214);
+    --color5: rgb(35, 88, 168);
+    --btn-anime-speed: 0.4s;
+    --menu-anime-speed: 0.7s;
+}
+
+/* RESET */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Potta One', cursive;
+    line-height: 2.5rem;
+}
+
+.container{
+
+max-width: 70%;
+margin: auto;
+overflow: hidden;
+padding: 0 3rem;
+
+}
+
+#showcase{
+    background-color: var(--color1);
+    color: whitesmoke;
+    height: 100vh;
+    position: relative;
+}
+
+#showcase::before{
+
+    background: url(../img/img-queenstown.jpg) no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+    position:absolute;
+    content: "";
+    /* mix-blend-mode:luminosity; */ /*can be used for blendig bg-color with bg-img*/
+    z-index: -1;
+}
+
+#showcase .showcase-container{
+
+display: flex;
+height: 100%;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+
+}
+
+.btn{
+    display: inline-block;
+    border: none;
+    background-color: var(--color4);
+    
+    color: white;
+    padding: 1rem 2rem;
+    transition: all var(--btn-anime-speed) ease-in-out;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.btn:hover{
+    background-color: var(--color5);
+}
