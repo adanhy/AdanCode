@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100hw;
+}
+.grid{
+    background:rgb(163, 192, 177);
+    width: 100wh;
+    height: 100vh;
+    display: grid;
+    grid-gap: 0.1rem;
+
+    grid-template-areas:  
+    'pic3	pic3	pic3	pic2	pic2	pic1	pic1	pic1'
+    'pic3	pic3	pic3	pic2	pic2	pic1	pic1	pic1'
+    'pic4	pic4	pic4	pic2	pic2	pic1	pic1	pic1'
+    'pic4	pic4	pic4	pic5	pic5	pic6	pic6	pic6'
+    'pic7	pic7	pic7	pic5	pic5	pic6	pic6	pic6'
+    'pic7	pic7	pic7	pic8	pic8	pic6	pic6	pic6'
+    'pic12	pic12	pic11	pic8	pic8	pic9	pic10	pic10'
+    'pic14	pic14	pic14	pic13	pic13	pic13	pic10	pic10'
+}
+
+/* tablet */
+@media(max-width:768px){
+    .grid{
+        grid-template-areas:  
+        'pic1 pic2'
+        'pic3 pic4' 
+        'pic5 pic6'
+        'pic7 pic8'
+        'pic9 pic10'
+        'pic11 pic12'
+        'pic13 pic14'
+    }
+}
+
+
+/* smartphone */
+@media(max-width:500px){
+    .grid{
+        grid-template-areas:  
+        'pic1' 'pic2'
+        'pic3' 'pic4' 
+        'pic5' 'pic6'
+        'pic7' 'pic8'
+        'pic9' 'pic10'
+        'pic11' 'pic12'
+        'pic13' 'pic14'
+    }
+}
+
+.pic1{
+    background:url("../images/gal-1.jpeg") no-repeat center center/cover;
+    grid-area: pic1;
+}
+
+.pic2{
+    background:url("../images/gal-2.jpeg") no-repeat center center/cover;
+    grid-area: pic2;
+}
+
+.pic3{
+    background:url("../images/gal-3.jpeg") no-repeat center center/cover;
+    grid-area: pic3;
+}
+
+.pic4{
+    background:url("../images/gal-4.jpeg") no-repeat center center/cover;
+    grid-area: pic4;
+}
+
+.pic5{
+    background:url("../images/gal-5.jpeg") no-repeat center center/cover;
+    grid-area: pic5;
+}
+
+.pic6{
+    background:url("../images/gal-6.jpeg") no-repeat center center/cover;
+    grid-area: pic6;
+}
+
+.pic7{
+    background:url("../images/gal-7.jpeg") no-repeat center center/cover;
+    grid-area: pic7;
+}
+
+.pic8{
+    background:url("../images/gal-8.jpeg") no-repeat center center/cover;
+    grid-area: pic8;
+}
+
+.pic9{
+    background:url("../images/gal-9.jpeg") no-repeat center center/cover;
+    grid-area: pic9;
+}
+
+.pic10{
+    background:url("../images/gal-10.jpeg") no-repeat center center/cover;
+    grid-area: pic10;
+}
+
+.pic11{
+    background:url("../images/gal-11.jpeg") no-repeat center center/cover;
+    grid-area: pic11;
+}
+
+.pic12{
+    background:url("../images/gal-12.jpeg") no-repeat center center/cover;
+    grid-area: pic12;
+}
+
+.pic13{
+    background:url("../images/gal-13.jpeg") no-repeat center center/cover;
+    grid-area: pic13;
+}
+
+.pic14{
+    background:url("../images/gal-14.jpeg") no-repeat center center/cover;
+    grid-area: pic14;
+}
+
