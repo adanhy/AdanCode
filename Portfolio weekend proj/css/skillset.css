@@ -1,0 +1,110 @@
+.skillset-page{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    position: relative;
+    background:var(--light);
+}
+    
+.bubbles{
+    width: 100wh;
+    height: 100vh;
+    display: grid;
+    position: relative;
+    grid-gap: 1rem;
+    grid-template-areas:
+    'html_html css_css node_node nodejs_nodejs angular_angular sass_sass'
+    
+
+
+    }
+
+
+.skillset-page>h1{
+     position: relative;
+    grid-area: title;
+    color: var(--dark);
+    font-family: 'Lobster', cursive ;
+    text-shadow: 1px 1px;
+    padding: 0.5rem 5rem;
+    font-size: 4rem;
+    display: inline-block;
+
+}
+
+.skillset-page > h1:before{
+    content: '<';
+    left: -4rem;
+    position: relative;
+    animation: header 10s ease-in-out infinite;
+    transition: all 0.5s;
+  
+}
+ 
+.skillset-page>h1:after{
+    content: '/>';
+    position: absolute;
+    transform: translateX(4rem);
+}
+
+
+
+.icon{   
+    color: var(--dark);
+    height: 5rem;
+   
+    font-size: 10rem;
+    height: auto;
+    overflow: visible;
+    margin: 4rem 2rem;
+}
+
+.icon::after{
+    content:"";
+}
+
+.icon:hover{
+    opacity: 0.9;
+    
+
+}
+
+.icon:hover:after{
+    position: absolute;
+    overflow:visible;
+
+    bottom:-2rem;
+    display: block;
+    bottom:0;
+    margin-top: 2rem;
+    
+    font-size: 2rem;
+    
+     
+    content:"bla bla bla bla bla bla bla";
+    opacity: 0.9;
+}
+
+
+
+
+.css{
+    grid-area: css_css;
+}
+.html{
+    grid-area: html_html;
+}
+.js{
+    grid-area: js_js;
+}
+.angular{
+    grid-area: angular_angular;
+}
+.nodejs{
+    grid-area: nodejs_nodejs;
+}
+.sass{
+    grid-area: sass_sass;
+}
+

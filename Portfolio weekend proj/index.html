@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/about-page.css">
+    <link rel="stylesheet" href="./css/skillset.css">
     <link rel="stylesheet" href="./css/homepage-style.css">
+    <link rel="stylesheet" href="./css/contact-page.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/3013192adf.js" crossorigin="anonymous"></script>
+
 
 
     <title>Adan Hajyahya | Full Stack Web Developer</title>
@@ -20,36 +23,93 @@
 
 <body>
     <div id="navbar">
-        <a href src="index.html" class="logo">adanhy</a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-    <div class="full-page">
-        <div class="main-page">
-            <div id="bg-img">
-                <div class="overlay ">
-                <img src="./media/royspeak1.jpg" alt="royspeak1">                
-                <img src="./media/royspeak2.jpg" alt="royspeak2">                
-                <img src="./media/royspeak3.jpg" alt="royspeak3">
-                <img src="./media/royspeak4.jpg" alt="royspeak4">
-          </div>
-        </div>
-          <div>
-            <h1>Adan Hajyahya</h1>
-            <h2>Full Stack Web Developer</h2>
-          </div>
-        
-       </div>
-    </div>
-    <div class="full-page">
-        <div class="about-page">
-        
+        <div class="nav-top">
+            <div class="nav-box">
+                <a href src="index.html" class="logo">adanhy</a>
+            </div>
+       
+            <div class="nab-box">
+       
+                <ul id="nav-list">
+       
+                    <li><a href="#">Home</a></li>
+       
+                    <li><a href="#">About Me</a></li>
+       
+                    <li><a href="#">Skillset</a></li>
+       
+                    <li><a href="#">Contact</a></li>
+       
+                </ul>
+            </div>
         </div>
     </div>
+</div>
+
+<!-- END OF NAVBAR -->
+
+<!-- START OF HOME/MAIN PAGE -->
+
+<div class="full-page main-page">
+        <div class="overlay">
+            <div class="main-info">
+                <h1>Hello World! I'm Adan.</h1>
+                <h2>Full Stack Web Developer</h2>
+           </div>
+           <a href="#" class="arrow-container">
+            <div class="arrow"></div> 
+        </a>
+        </div>
+    </div>
+
+
+<!-- END OF HOME/MAIN PAGE -->
+
+    
+<div class="full-page about-page">    
+    <div id="about-pic"></div>
+    <div id="about-info">
+        <h1>about me</h1>
+        <div class="info">Adan Hajyahya</div>
+        <div class="info">Full Stack Web Developer</div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto alias voluptates, incidunt vel molestiae dolorum cumque ratione, praesentium nemo dolor provident molestias consequuntur asperiores at amet eius culpa quod quibusdam quidem sunt quia dignissimos quae. Minima nostrum, expedita quam fugit fuga eaque reiciendis, tempore numquam aliquam beatae quas id saepe.</p>
+    </div>
+</div>
+
+
+ 
+<div class="full-page skillset-page">
+
+    <h1>Skillset</h1>
+    
+    <div class="bubbles">
+        <div><i class=" icon css fab fa-css3-alt"></i></div>
+        <div><i class=" icon html fab fa-html5"></i></div>
+        <div><i class=" icon js fab fa-js"></i></div>
+        <div><i class=" icon angular fab fab fa-angular"></i></div>
+        <div><i class=" icon nodejs fab fa-node-js"></i></div>
+        <div><i class=" icon sass fab fa-sass "></i></div>
+    </div>
+</div> 
+</div>
+
+<div class=" contact-page">
+    <h1 class="contact-header">Contact</h1>
+    <div class="contact-form">
+        
+        <form action="#">
+          
+            <label class="lbl item" for="name">Name >></label>
+            <input type="text" class="item" name="name" id="name">
+            <label class="lbl item"for="email">E-mail >></label>
+            <input type="email" class="item" name="email" id="email">
+            <label class="lbl item" for="message">Message >></label>
+            <textarea class="item" name="message" id="message"></textarea>
+            <button type="submit" class="btn item"> <<   Submit   >></button>
+        </form>
+      </div>
+</div>
+
 
 </body>
 </html>

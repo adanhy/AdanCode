@@ -1,5 +1,9 @@
 
-
+:root{
+    --dark:#00203FFF; 
+    --light:#ADEFD1FF;
+    max-width: 100vw;
+}
 
 *{
     box-sizing: border-box;
@@ -11,7 +15,9 @@
 .fullpage{
     width: 100vw;
     height: 100vh;
-    font-family: 'Lobster', cursive ;
+    /* font-family: 'Lobster', cursive ; */
+    font-family: 'Poppins', sans-serif;
+    max-width: 100vw;
 }
 
 .logo{
@@ -19,5 +25,8 @@
     color: rgb(255, 255, 255);
     cursor: pointer;
     display :block;
-    font-family: 'Lobster', cursive;
+    /* font-family: 'Lobster', cursive; */
+    font-family: 'Poppins', sans-serif;
+    
+
 }
