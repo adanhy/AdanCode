@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      function leapYearPrint(year) {
+        let isLeap=false;
+        if(year %4 != 0){
+          console.log("This is not a leap year.");
+        }
+        else if(year%100!=0) {
+          console.log(`It is indeed aleap year`);
+        }
+        else if(year%400!=0){
+          console.log("This is not a leap year.");
+        }
+        else{
+          console.log(`It is indeed aleap year`);
+        }
+      }
+
+      let num = window.prompt("welcome to the leap-year checker, please provide a year:");
+      leapYearPrint(num);
+
+    </script>
+  </body>
+</html>

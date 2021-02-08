@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7-BOOM</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      function seven_boom(n) {
+        for (let i = 1; i <= n; i++) {
+          if (i % 7 == 0 && i.toString().includes("7")) {
+            console.log("BOOM-BOOM");
+          } else if (i % 7 == 0) {
+            console.log("BOOM");
+          } else {
+            console.log(i);
+          }
+        }
+      }
+
+      let num = window.prompt("let's play seven boom - give me a number");
+      seven_boom(num);
+
+    </script>
+  </body>
+</html>

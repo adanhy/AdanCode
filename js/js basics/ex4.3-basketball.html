@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basketball</title>
+  </head>
+  <body>
+    <script>
+      function avgScore(num1, num2, num3) {
+        return (num1 + num2 + num3) / 3;
+      }
+
+      function declareWinner(avg, name) {
+        console.log(`and the winner is ${name} with avg score of ${avg}`);
+      }
+
+      let john1 = 89;
+      let john2 = 89;
+      let john3 = 89;
+
+      let mike1 = 116;
+      let mike2 = 94;
+      let mike3 = 123;
+
+      let winnerName;
+      let winningAvgScore;
+
+      let avgJohn = avgScore(john1, john2, john3);
+      let avgMike = avgScore(mike1, mike2, mike3);
+
+      console.log(`John's average score is: ${avgJohn}`);
+      console.log(`Mikes's average score is: ${avgMike}`);
+
+      if (avgJohn > avgMike) {
+        winnerName = `John`;
+        winningAvgScore = avgJohn;
+      } else if (avgJohn < avgMike) {
+        winnerName = "Mike";
+        winningAvgScore = avgMike;
+      } else {
+        winnerName = "DRAW";
+      }
+
+      let mary1 = 50;
+      let mary2 = 134;
+      let mary3 = 105;
+
+      let avgMary = avgScore(mary1, mary2, mary3);
+
+      console.log(`Mary's average score is: ${avgMary}`);
+
+      if (avgMary > winningAvgScore) {
+        winningAvgScore = avgMary;
+        winnerName = `Mary`;
+      }
+
+      if (winnerName != "DRAW") {
+        declareWinner(winningAvgScore, winnerName);
+      } else {
+        console.log(`it's a DRAW!`);
+      }
+    </script>
+  </body>
+</html>
