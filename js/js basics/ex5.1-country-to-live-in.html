@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>country to live in</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const sarahLang = "english"
+      const isSarahIsland = false;
+      const sarahPopulationLimit = 50000000;
+
+
+        function countryToLiveIn(language, isIsland, population, country){
+            if(language==sarahLang && isIsland==isSarahIsland && population<sarahPopulationLimit){
+                console.log(`you sholud live in ${country}`);
+            }
+            else{
+                console.log(`${country}  does not meet your criteria`);
+            }
+        }
+   
+
+        
+        let lang= window.prompt("enter language:");
+        let isIsland = window.prompt("is it an island? (No = 0, YES = 1):");
+        let popu = window.prompt("enter population:");
+
+        countryToLiveIn(lang,isIsland,popu,"Canada");
+
+
+
+    </script>
+  </body>
+</html>
