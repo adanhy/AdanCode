@@ -29,21 +29,19 @@ b)string
 
 //------Submit your answers under the question------//
 
+//!create three different ways to declare variables
 
+const name1 = "adan";
+let nam2 = "adan";
+var nickname = "adan";
 
-//create three different ways to declare variables
+//! declare a variable and reassign a value to it
 
-const name1="adan";
-let nam2="adan";
-var nickname="adan"
+let numnum = 20;
 
-//declare a variable and reassign a value to it
+//!create a variable and after that assign a string with its value being: He's got it!
 
-let numnum=20;
-
-//create a variable and after that assign a string with its value being: He's got it!
-
-let str='He\'s got it!';
+let str = "He's got it!";
 
 /*
 1. create a variable and assign a value on how much a restaurant bill is.
@@ -53,16 +51,13 @@ let str='He\'s got it!';
 
 let before_tax = 95;
 let tax = 0.17;
-let after_tax = before_tax+(1+tax);
-console.log(' Your total bill is $' + after_tax);
+let after_tax = before_tax + (1 + tax);
+console.log(" Your total bill is $" + after_tax);
 
 // Round the number 50.6 to its nearest integer
 
 console.log(Math.round(50.6));
 
-
 //Create a variable that is undefined
 
 let ud_var;
-
-
