@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array string length</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+     function arrWordLengths(words){
+       let arr=[];
+       for(let i=0;i<words.length;i++){
+         arr[i]= words[i].length;
+       }
+       return arr;
+     }
+
+     let w = ["boo","doooo","hoo","fs"]
+     console.log(w);
+     console.log(arrWordLengths(w));
+
+
+
+    </script>
+  </body>
+</html>

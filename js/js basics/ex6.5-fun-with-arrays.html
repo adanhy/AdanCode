@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fun with arrays</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const obj1={name:"adan",age :31};
+
+      let arr=new Array(100);
+      arr= arr.fill(obj1,0,100);
+      console.log(arr);
+
+    let arr2 = Array.from({length:100},(_item, index) => index )
+    console.log(arr2);
+    
+
+    console.log(Array.isArray(arr));
+    console.log(Array.isArray(arr2));
+
+    let newArr1 = [...arr]; //new array (new memory slots)
+    let newArr2 = arr; //another name, it only points on the same memory slots, not a new array
+    
+
+
+
+    
+
+    
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array string length</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const popOfWorld = 7900;
+      var populations = [500,62,18,97];
+
+      let percentageOfWorld2 = function (population){
+        return population / popOfWorld * 100;
+    }
+
+    const populationPercentages = function(population){
+        let percentages=[];
+        for(let i=0;i<population.length;i++){
+            percentages[i]=percentageOfWorld2(population[i]);
+        }
+        return percentages;
+    }
+
+    console.log(populationPercentages(populations));
+
+
+
+    </script>
+  </body>
+</html>
