@@ -10,36 +10,30 @@
     <script>
       "use strict";
 
-     
-    let mycountry = {
-      country: "New Zealand",
-      capital: "Wellington",
-      language: "English",
-      population: 5000000,
-      neighbours: new Array(0),      
-      describe : function (){
-        console.log(`${this.country} has ${this.population} people, their mother tongue is ${this.language}, they have ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`);
-      },
-      checkIsland : function(){
-        this.neighbours.length > 0 ? this.isIsland= false : this.isIsland= true
-      }
-      
-    };
+      let mycountry = {
+        country: "New Zealand",
+        capital: "Wellington",
+        language: "English",
+        population: 5000000,
+        neighbours: new Array(0),
+        describe: function () {
+          console.log(
+            `${this.country} has ${this.population} people, their mother tongue is ${this.language}, they have ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`
+          );
+        },
+        checkIsland: function () {
+          this.neighbours.length > 0
+            ? (this.isIsland = false)
+            : (this.isIsland = true);
+        },
+      };
 
-    
+      mycountry.describe();
 
-
-
-    mycountry.describe();
-
-    mycountry.checkIsland();
-    console.log(mycountry);
-    console.log(mycountry.isIsland);
-
-    
-    
-
-
+      console.log(mycountry);
+      mycountry.checkIsland();
+      console.log(mycountry);
+      console.log(mycountry.isIsland);
     </script>
   </body>
 </html>

@@ -29,8 +29,49 @@
       };
 
       function getCandy(candyStore, id) {
-        //your code
+        for (let i = 0; i < candyStore.candies.length; i++) {
+          if (candyStore.candies[i].id == id) {
+            return candyStore.candies[i];
+          }
+        }
       }
+
+      console.log(getCandy(candyStore, "5hd7y"));
+
+      function getPrice(candyStore, id) {
+        for (let i = 0; i < candyStore.candies.length; i++) {
+          if (candyStore.candies[i].id == id) {
+            return candyStore.candies[i].price;
+          }
+        }
+      }
+
+      console.log(getPrice(candyStore, "5hd7y"));
+
+      function addCandy(candyStore, id, name, price) {
+        candyStore.candies.push({
+          name: name,
+          id: id,
+          price: price,
+          amount: 1,
+        });
+      }
+
+      addCandy(candyStore, "gmgmgm", "gummybears", 33);
+
+      console.log(candyStore);
+
+      function buy(candyStore, id) {
+        let selectedCandy = getCandy(candyStore, id);
+        if (selectedCandy.amount >= 1) {
+          selectedCandy.amount = selectedCandy.amount - 1;
+          candyStore.cashRegister =
+            candyStore.cashRegister + getPrice(candyStore, id);
+        }
+      }
+
+      buy(candyStore, "gmgmgm");
+      console.log(candyStore);
     </script>
   </body>
 </html>
