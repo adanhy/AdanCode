@@ -61,12 +61,13 @@
 
       console.log(candyStore);
 
+      
       function buy(candyStore, id) {
         let selectedCandy = getCandy(candyStore, id);
         if (selectedCandy.amount >= 1) {
           selectedCandy.amount = selectedCandy.amount - 1;
           candyStore.cashRegister =
-            candyStore.cashRegister + getPrice(candyStore, id);
+          candyStore.cashRegister + getPrice(candyStore, id);
         }
       }
 
