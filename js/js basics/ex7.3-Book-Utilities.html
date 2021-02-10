@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Utilities</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+     
+      let book1 = {
+        name: "The Book of Basketball",
+        author: "Bill Simmons",
+        publishedIn : 2009,
+      };
+    
+      let book2 = {
+        name: "Dollars and Sense",
+        author: "Dan Ariely",
+        publishedIn : 2017,
+      };
+        
+let bookUtils= {};
+
+bookUtils.getFirstPublished = function(b1,b2){
+  if(b1.publishedIn - b2.publishedIn > 0){
+    return b2;
+  }
+  else{
+    return b1;
+  }
+}
+
+console.log(bookUtils.getFirstPublished(book1,book2));
+
+bookUtils.setNewEdition = function (book,date){
+  book.latestEdition = date; 
+}
+
+ bookUtils.setNewEdition(book1,"25.3.2020");
+ 
+bookUtils.setLanguage = function (book, language){
+  book.language = language;
+}
+
+bookUtils.setLanguage(book1,"English");
+
+bookUtils.setTranslation = function (book, lang, trans){
+  book.translation = {
+    language:lang,
+    translation: trans,
+  }
+}
+
+bookUtils.setTranslation(book2,"French","Zidane");
+
+
+bookUtils.setPublisher =  function(book, name, location){
+  book.publisher={
+    name : name,
+    location : location,
+  }
+}
+
+bookUtils.setPublisher(book2,"Jeff Kreislery","Boston");
+
+bookUtils.isSamePublisher = function isSamePublisher(bk1,bk2){
+  if(bk1.publisher.name == bk2.publisher.name && bk1.publisher.location == bk2.publisher.location ){
+    return true;
+  }
+  return false;
+};
+
+
+
+
+console.log(book1);
+console.log(book2);
+
+console.log(bookUtils.isSamePublisher(book2,book2));
+
+
+
+
+    </script>
+  </body>
+</html>
