@@ -40,6 +40,13 @@ body {
   flex-direction: row;
 }
 
+#left-logo {
+  height: 30px;
+  width: 97px;
+  margin: 12px;
+  padding: 1px 8px 0 6px;
+}
+
 #nav-main {
   background-color: #232f3e;
   width: 100%;
