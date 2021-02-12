@@ -2,22 +2,46 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Amazon Ember", Arial, sans-serif;
 }
 
 body {
   color: #0f1111;
 }
 
+#navbar-main {
+  color: white;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
 #nav-belt {
   background-color: #131921;
   height: 60px;
   display: flex;
-  position: static;
+  flex-direction: row;
+  /* align-content: space-around; */
+  justify-content: space-between;
+  /* position: static; */
   float: none;
   width: 100%;
   font-size: 14px;
   z-index: 5;
   font-family: inherit;
   line-height: 1.5em;
-  flex-flow: column nowrap;
+}
+
+#nav-fill,
+#nav-search,
+#nav-search-bar-form,
+.nav-left {
+  display: flex;
+  flex-direction: row;
+}
+
+#nav-main {
+  background-color: #232f3e;
+  width: 100%;
+  height: 39px;
 }
