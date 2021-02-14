@@ -4,39 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>maps with objects</title>
+    <title>performance</title>
   </head>
   <body>
     <script>
       "use strict";
 
-      const obj1={
-          name: "adan",
-      };
+      const myObj = {};
+      const myMap = new Map();
 
-      const obj2={
-        name: "melo",
-      };
+      const maxCount = 10000;
 
-      const obj3={
-        name: "maria",
-      };
+      console.time("adding objects"); // <---- Starts the timer
+      for (let i = 0; i < maxCount; i++) {
+        myObj[i] = i;
+      }
+      console.timeEnd("adding objects"); // <---- Stops the time
 
+      // console.log(myObj);
 
-      const mapp = new Map();
+      console.time("adding maps"); // <---- Starts the timer
+      for (let i = 0; i < maxCount; i++) {
+        myMap.set(i, i);
+      }
+      console.timeEnd("adding maps"); // <---- Stops the time
+      // console.log(myMap);
 
-      mapp.set(obj1, 123456789);
-      mapp.set(obj2,987654321);
-      mapp.set(obj3,456789123);
+      console.time("obj-find"); // <---- Starts the timer
+      for (let i = 0; i < maxCount; i++) {
+        if (Object.keys(myObj)[i] == 884) {
+          break;
+        }
+      }
 
-   
+      console.timeEnd("obj-find"); // <---- Stops the time
 
-    for (const [key,value] of mapp){
-        console.log(`name :${key.name}  id: ${value}`);
-    }
+      console.time("maps-find"); // <---- Starts the timer
+      for (let i = 0; i < maxCount; i++) {
+        myMap.get(884);
+      }
+      console.timeEnd("maps-find"); // <---- Stops the time
 
+      console.time("obj-add-single-entry");
+      myObj.hello = "hello";
+      console.timeEnd("obj-add-single-entry");
 
-      
+      console.time("map-add-single-entry");
+      myMap.set("hello", "hello");
+      console.timeEnd("map-add-single-entry");
+
+      console.time("obj-delete-single-entry");
+      delete myObj.hello;
+      console.timeEnd("obj-delete-single-entry");
+
+      console.time("map-delete-single-entry");
+      myMap.delete("hello");
+      console.timeEnd("map-delete-single-entry");
     </script>
   </body>
 </html>
