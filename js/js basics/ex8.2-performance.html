@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>maps with objects</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const obj1={
+          name: "adan",
+      };
+
+      const obj2={
+        name: "melo",
+      };
+
+      const obj3={
+        name: "maria",
+      };
+
+
+      const mapp = new Map();
+
+      mapp.set(obj1, 123456789);
+      mapp.set(obj2,987654321);
+      mapp.set(obj3,456789123);
+
+   
+
+    for (const [key,value] of mapp){
+        console.log(`name :${key.name}  id: ${value}`);
+    }
+
+
+      
+    </script>
+  </body>
+</html>
