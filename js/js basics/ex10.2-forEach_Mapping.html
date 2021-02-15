@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach mapping</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const arrayofNums = [81, 5, 8, 41, 6, 9, 100, -41];
+
+      const vowel = ["a", "e", "i", "o", "u", "y", "w"];
+
+      const doubleValues = function (arr) {
+        return arr.map((element) => {
+          return element * 2;
+        });
+      };
+
+      console.log(`original number array: ` + arrayofNums);
+
+      console.log(`doubleValues: ` + doubleValues(arrayofNums));
+
+      const onlyEvenValues = function (arr) {
+        return arr.filter((e) => e % 2 == 0);
+      };
+
+      console.log(onlyEvenValues(arrayofNums));
+
+      const showFirstAndLast = function (arr) {
+        return arr.filter((e, index, arr) => {
+          if (index == 0) {
+            return true;
+          }
+          if (index == arr.length - 1) {
+            return true;
+          }
+          return false;
+        });
+      };
+
+      console.log(showFirstAndLast(arrayofNums));
+
+      const vowelCount = (str1) => {
+        let str2 = str1.split(` `);
+        str2.forEach(function (e, i, arr) {
+          return arr[i].toLowerCase();
+        });
+        return str2;
+      };
+
+      vowelCount("adaN is our dev");
+    </script>
+  </body>
+</html>

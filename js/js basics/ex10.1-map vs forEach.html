@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map vs foreach</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const newReleases = [
+        {
+          id: 70111470,
+          title: "Die Hard",
+          boxart: "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
+          uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+          rating: [4.0],
+          bookmark: [],
+        },
+        {
+          id: 654356453,
+          title: "Bad Boys",
+          boxart: "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+          uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+          rating: [5.0],
+          bookmark: [{ id: 432534, time: 65876586 }],
+        },
+        {
+          id: 65432445,
+          title: "The Chamber",
+          boxart: "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
+          uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+          rating: [4.0],
+          bookmark: [],
+        },
+        {
+          id: 675465,
+          title: "Fracture",
+          boxart: "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+          uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+          rating: [5.0],
+          bookmark: [{ id: 432534, time: 65876586 }],
+        },
+      ];
+
+      const objFindForEach = function (nr, makat) {
+        const results = new Array();
+        nr.forEach((element) => {
+          if (element.id == makat) {
+            results.push({ id: element.id, title: element.title });
+          }
+        });
+        return results;
+      };
+
+      const objFindMap = function (nr, makat) {
+        let results = new Array();
+        results = nr.map(function (element) {
+          if (element.id == makat) {
+            return { id: element.id, title: element.title };
+          } else {
+            return 0;
+          }
+        });
+
+        return results.filter(function (element) {
+          if (typeof element == "object") return element;
+        });
+      };
+
+      console.time("array of objects find - forEach");
+
+      console.log(objFindForEach(newReleases, 675465));
+
+      console.timeEnd("array of objects find - forEach");
+
+      console.time("array of objects find - MAP");
+
+      console.log(objFindMap(newReleases, 675465));
+
+      console.timeEnd("array of objects find - MAP");
+    </script>
+  </body>
+</html>
