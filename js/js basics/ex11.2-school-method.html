@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>school method</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const school = {
+        teachers: [
+          {
+            id: 1,
+            name: "Pinchas",
+            subjects: ["chemistry", "biology", "physics"],
+            students: [],
+            capacityLeft: 3,
+          },
+          {
+            id: 2,
+            name: "Williams",
+            subjects: ["history", "ethics"],
+            students:   ,
+            capacityLeft: 2,
+          },
+        ],
+        students: [
+          {
+            id: 10,
+            name: "Jennifer",
+            age: 20,
+          },
+          {
+            id: 11,
+            name: "Howard",
+            age: 23,
+          },
+          {
+            id: 12,
+            name: "Old-Timmy",
+            age: 86,
+          },
+          {
+            id: 13,
+            name: "Houston",
+            age: 21,
+          },
+        ],
+      };
+
+      school.findPerson = function (type, id) {
+        if (type === "teacher") {
+          console.log(`ima teacher`);
+          return school.teachers.filter((e) => {
+            if (e[id] == id) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+        }
+        if (type === "student") {
+          console.log(`ima student`);
+          return school.students.filter((e) => {
+            if (e.id == id) {
+              // console.log(e);
+              return true;
+            } else {
+              return false;
+            }
+          });
+        }
+      };
+
+      console.log(school.findPerson("student", 12));
+
+      // school.printArray = (str) => {
+      //   if (str === "student") {
+      //     console.log(school.students);
+      //   }
+      //   if (str === "teacher") {
+      //     console.log(school.teachers);
+      //   }
+      // };
+
+      // school.assignStudent = function (id, subject) {
+      //   let student = school.findPerson("student", id);
+      //   console.log(student);
+
+      //    school.
+
+      // };
+
+
+      // console.log(school.assignStudent(12, "history"));
+    </script>
+  </body>
+</html>
