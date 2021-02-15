@@ -104,48 +104,47 @@
       const shiftLetters = function (str) {
         console.log(`original string: ` + str);
         let str2 = str.split(" ");
-        console.log(`splitted string = array of strings: ` + str2);
+        // console.log(`splitted string = array of strings: ` + str2);
 
         str2.map((e, i, arr) => {
-          console.log(e.split(""));
+          // console.log(e.split(""));
           arr[i] = e.split("");
           // console.log(arr[i]);
         });
 
-        console.log(str2);
+        // console.log(str2);
 
         str2 = str2.map((e, i) => {
-          console.log(e);
-          e.forEach((element) => {
+          // console.log(e);
+          e.forEach((element, index, array) => {
             // console.log(element.charCodeAt());
-            return element.charCodeAt() - 1;
+            array[index] = element.charCodeAt() - 1;
           });
+          e.forEach((element, index, array) => {
+            // console.log(element.charCodeAt());
+            array[index] = String.fromCharCode(element);
+          });
+          // console.log(e.join(""));
+          return e.join("");
         });
 
-        console.log(str2);
-
-        // str2 = str2.map((e, i, arr) => {
-        //   console.log(`step 1 word: ` + e);
-        //   return arr.map(function (e, i, arr) {
-        //     console.log(`step 2 letter: ` + e[i]);
-        //     console.log(String.fromCharCode(e[i].charCodeAt() - 1));
-        //     return e[i].charCodeAt() - 1;
-        //   });
-        // });
-
-        // console.log(str2);
-        // str2 = str2.map((e, i, arr) => {
-        //   console.log(`level 3: ` + String.fromCharCode(arr[i]));
-        //   return String.fromCharCode(arr[i]);
-        // });
-
-        return str2;
+        return str2.join(" ");
       };
 
       let str = "bcde fgh ijkl xyz";
-      console.log(`end: ` + shiftLetters(str));
+      console.log(`shiftLetters end: ` + shiftLetters(str));
 
-      const swapCase = function () {};
+      const swapCase = function (str) {
+        let str2 = str.split(" ");
+        return str2.map((e, i, arr) => {
+          if (i % 2 != 0) {
+            return capitalize(e);
+          }
+          return e;
+        });
+      };
+
+      console.log(swapCase(str));
     </script>
   </body>
 </html>
