@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>steps</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const N = (num) => {
+        let line = "";
+        let count = 1;
+
+        while (count <= num) {
+          let line = "";
+
+          for (let i = num - count; i < num; i++) {
+            line = line + "#";
+          }
+          for (let i = count; i < num; i++) {
+            line = line + " ";
+          }
+
+          count++;
+          console.log(line);
+        }
+      };
+      N(5);
+    </script>
+  </body>
+</html>

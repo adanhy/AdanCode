@@ -9,7 +9,24 @@
   <body>
     <script>
       "use strict";
+      const popOfWorld = 7900;
+      var populations = [500, 62, 18, 97];
 
+      let percentageOfWorld2 = function (population) {
+        return (population / popOfWorld) * 100;
+      };
+
+      const populationPercentages = function (population) {
+        let percentages = [];
+        let i = 0;
+        while (i < population.length) {
+          percentages[i] = percentageOfWorld2(population[i]);
+          i++;
+        }
+        return percentages;
+      };
+
+      console.log(populationPercentages(populations));
     </script>
   </body>
 </html>
