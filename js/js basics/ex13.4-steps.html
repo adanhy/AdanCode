@@ -27,7 +27,60 @@
           console.log(line);
         }
       };
-      N(5);
+
+      const N2 = (num) => {
+        let count = 1;
+        while (count <= num) {
+          let line = "";
+          for (let i = 1; i <= num; i++) {
+            if (i <= count) {
+              line = line + "#";
+            } else {
+              line = line + " ";
+            }
+          }
+          count++;
+          console.log(line);
+        }
+      };
+      N2(5);
+
+      let steps = (n) => {
+        let sign = "";
+        for (let i = n - 1; i >= 0; i--) {
+          console.log(`i: ` + i);
+          if (i != n - 1) {
+            sign += "\n";
+          }
+
+          for (let j = 0; j <= n - i - 1; j++) {
+            console.log(`j: ` + j);
+            sign += "#";
+          }
+        }
+        console.log(sign);
+      };
+      steps(5);
+
+      const N5 = (num) => {
+        let line = "";
+        let count = 1;
+        while (count <= num) {
+          for (let i = 1; i <= num; i++) {
+            if (i <= count) {
+              line = line + "#";
+            } else {
+              line = line + " ";
+            }
+          }
+          count++;
+          line += "\n";
+        }
+        console.log(line);
+      };
+      N5(5);
+
+      return {...acc, [order.status]:(acc[order.status] + 1 || 1 }
     </script>
   </body>
 </html>
