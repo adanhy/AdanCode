@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loops in loops</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      const listOfNeighbours = [
+        ["Canada", "Mexico"],
+        ["Spain"],
+        ["Norway", "Sweden", "Russia"],
+      ];
+
+      for (let i = 0; i < listOfNeighbours.length; i++) {
+        // console.log(`i: ${i}`);
+        for (let j = 0; j < listOfNeighbours[i].length; j++) {
+          //   console.log(`j: ${j}`);
+          console.log(`Neighbour: ${listOfNeighbours[i][j]}`);
+        }
+      }
+    </script>
+  </body>
+</html>

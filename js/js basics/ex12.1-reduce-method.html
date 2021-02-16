@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce Method</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const numbers = [1, 2, 1, 2];
+
+      console.log(numbers);
+      const myMax = (arr) => {
+        return arr.reduce(
+          (accumulator, currentValue, currentIndex = 0, array) => {
+            if (currentValue > accumulator) {
+              return currentValue;
+            }
+            return accumulator;
+          },
+          0
+        );
+      };
+
+      console.log(`max: ` + myMax(numbers));
+
+      const sumOfEvenNumbers = (arr) => {
+        return arr.reduce((accumulator, currentValue, currentIndex, array) => {
+          console.log(`current i :` + currentIndex);
+          console.log(`current v :` + currentValue);
+          console.log(`acc: ` + accumulator);
+          if (currentValue % 2 == 0) {
+            return accumulator + currentValue;
+          }
+          return accumulator;
+        }, 0);
+      };
+
+      console.log(`sum of even numbers: ` + sumOfEvenNumbers(numbers));
+
+      const myAverage = (arr) => {
+        return (
+          arr.reduce(
+            (accumulator = 0, currentValue, currentIndex = 0, array) => {
+              return accumulator + currentValue;
+            },
+            0
+          ) / arr.length
+        );
+      };
+      console.log(`average: ` + myAverage(numbers));
+    </script>
+  </body>
+</html>

@@ -76,22 +76,16 @@
 
       console.log(school.findPerson("student", 12));
 
-      // school.printArray = (str) => {
-      //   if (str === "student") {
-      //     console.log(school.students);
-      //   }
-      //   if (str === "teacher") {
-      //     console.log(school.teachers);
-      //   }
-      // };
 
-      // school.assignStudent = function (id, subject) {
-      //   let student = school.findPerson("student", id);
-      //   console.log(student);
+      school.assignStudent = function (id, subject) {
+        const student = school.findPerson("student", id);
+        const teacher = school.teachers.find(teacher => {
+          return (teacher.subjects.includes(subject)) && (teacher.capacityLeft != 0);
 
-      //    school.
+        })
+        console.log(student);
 
-      // };
+      };
 
 
       // console.log(school.assignStudent(12, "history"));
