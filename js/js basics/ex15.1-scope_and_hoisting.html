@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scoping</title>
+  </head>
+  <body>
+    <script>
+      //  Block 1
+
+      console.log("BLOCK 1");
+
+      function funcA() {
+        var a = 1; // moved to here
+        console.log(a);
+        console.log(foo());
+        // var a = 1;  // was here
+        function foo() {
+          return 2;
+        }
+      }
+      funcA();
+      console.log(`END OF BLOCK 1`);
+
+      // a will be acessed but before we give it a value, the result is undefined
+      // foo will be executed and 2 will be printed
+      //to fix the "problem" we need to move var a = 1 above logging it
+
+      // --------------------------------------------------------------------------------------------------------------
+
+      // // Block 2
+
+      console.log(`BLOCK 2`);
+      var fullName = "John Doe";
+      var obj = {
+        fullName: "Colin Ihrig",
+        prop: {
+          fullName: "Aurelio De Rosa",
+          getFullName: function () {
+            return this.fullName;
+          },
+        },
+      };
+      console.log(obj.prop.getFullName());
+      var test = obj.prop.getFullName(); // added () so the execution will be inside of the obj.
+
+      console.log(test); // removed the ()
+
+      console.log(`END OF BLOCK 2`);
+
+      //"Aurelio De Rosa" will be printed by returning the full name via the function
+      // executing test will result in printing John Doe because we saved test as the function but we executed it outside of the object so this = the global with "John Doe" value.
+      //
+      //-----------------------------------------------------------------------------------------
+
+      // // Block 3
+      console.log(`BLOCK 3`);
+      function funcB() {
+        let a = (b = 0);
+        a++;
+        return a;
+      }
+      funcB();
+      console.log(typeof a);
+      console.log(typeof b);
+
+      console.log(`END OF BLOCK 3`);
+
+      // a is a local variable inside funcB so it will be undefined when logged outside of funcB
+      // b is a global variable created without declaration in the globalscope, this is js interpertation to the expression b=0
+      // so basically b is deblared globally with 0 value.
+      //
+      //-----------------------------------------------------------------------------------------
+
+      // // Block 4
+
+      console.log(`BLOCK 4`);
+
+      function funcC() {
+        console.log("1");
+      }
+      funcC();
+      function funcC() {
+        console.log("2");
+      }
+      funcC();
+
+      console.log(`END OF BLOCK 4`);
+
+      //expected output is 1 then 2
+
+      // // Block 5
+
+      console.log(`BLOCK 5`);
+      function funcD1() {
+        d = 1;
+      }
+      funcD1();
+      console.log(d);
+      function funcD2() {
+        e = 1; // fix = remove the var so the e will be defined in the globalscope
+      }
+      funcD2();
+      console.log(e); // lolgged but not defined in the globalscope
+
+      console.log(`END OF BLOCK 5`);
+
+      // we didn't define e outside of function d2 so there will be an error
+      // d is defined in the globalscope so it is logged just fine
+
+      ////Block 6
+      console.log(`BLOCK 6`);
+
+      function funcE() {
+        console.log("Value of f in local scope: ", f);
+      }
+      console.log("Value of f in global scope: ", f);
+      var f = 1;
+      funcE();
+
+      //expected output is undefiened and then 1
+      // thats because f was logged before it as globally declared
+      // after declaring it when we logg it via funcE it works just fine
+
+      console.log(`END OF BLOCK 6`);
+    </script>
+  </body>
+</html>

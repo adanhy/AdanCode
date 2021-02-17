@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>closures</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      //Block 1
+
+      var b = 1;
+      function someFunction(number) {
+        function otherFunction(input) {
+          return b;
+        }
+        b = 5;
+        return otherFunction;
+      }
+      var firstResult = someFunction(9);
+      var result = firstResult(2);
+
+      // firstResult will be the function otherFunction
+      //result will be the returned value from the execiotion of firstResult with the input as 2, the returned value is 5
+      //thats because b is a var declared in the global scope so if there is no new b declerations it will refer to the same b on the globalscope
+
+      //  Block 2
+
+      var a = 1;
+      function b2() {
+        a = 10;
+        return;
+        function a() {}
+      }
+      b2();
+      console.log(a);
+
+      //a is var in the globalscope
+      //executing b does not change the value of a (global variable too)
+      //a is not changed so it will be 1
+
+      // Block 3
+
+      let i;
+      for (i = 0; i < 3; i++) {
+        const log = () => {
+          console.log(i);
+        };
+        setTimeout(log, 100);
+      }
+
+      //i is declared outside of the loop
+      //inside the loop we execute the arrow function 3 times
+      //the setTimout delays the execution of the console.log(i) by 100 ms
+      //by that time the loop is over and the final value of i is 3
+      //it will be logged 3 times
+    </script>
+  </body>
+</html>
