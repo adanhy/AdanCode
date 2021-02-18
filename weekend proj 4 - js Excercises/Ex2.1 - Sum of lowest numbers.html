@@ -13,7 +13,6 @@
 
       function sumOfLowestPair(arr) {
         let results = arr.sort((a, b) => a - b);
-        // console.log(results);
         if (results.length > 1) return results[0] + results[1];
         return results[0];
       }

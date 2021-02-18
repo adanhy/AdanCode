@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Years and Centuries</title>
+  </head>
+  <body>
+    <script>
+      const centuryFromYear = (year) => {
+        let yr = Math.floor(year / 100);
+        if (year % 100 == 0) return yr;
+        return yr + 1;
+      };
+      console.log(centuryFromYear(1705)); //18
+      console.log(centuryFromYear(1900)); //19
+      console.log(centuryFromYear(1601)); //17
+      console.log(centuryFromYear(2000)); //20
+    </script>
+  </body>
+</html>

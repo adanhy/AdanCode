@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN CODE</title>
+  </head>
+  <body>
+    <script>
+      const press1 = [1, 2, 4];
+      const press2 = [3, 2, 6];
+      const press3 = [5, 2, 4, 6, 8];
+      const press4 = [7, 4, 8];
+      const result = [];
+
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          for (let k = 0; k < 10; k++) {
+            for (let t = 0; t < 10; t++) {
+              if (
+                press1.find((element) => element === i) &&
+                press2.find((element) => element === j) &&
+                press3.find((element) => element === k) &&
+                press4.find((element) => element === t)
+              ) {
+                result.push([i, j, k, t]);
+              }
+            }
+          }
+        }
+      }
+
+      console.log(result);
+    </script>
+  </body>
+</html>
