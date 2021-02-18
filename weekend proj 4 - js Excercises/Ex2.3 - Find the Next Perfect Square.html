@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2.3 - Find the Next Perfect Square</title>
+  </head>
+  <body>
+    <script>
+      function findNextSquare(num) {
+        let rt = Math.sqrt(num);
+
+        if (!Number.isInteger(rt)) return -1;
+
+        return Math.pow(rt + 1, 2);
+      }
+
+      console.log(findNextSquare(625));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2.2 - One and Zero - Binary</title>
+  </head>
+  <body>
+    <script>
+      const Test1 = [0, 0, 0, 1]; //==> 1
+      const Test2 = [0, 0, 1, 0]; //==> 2
+      const Test3 = [0, 1, 0, 1]; //==> 5
+      const Test4 = [1, 0, 0, 1]; //==> 9
+      const Test5 = [0, 0, 1, 0]; //==> 2
+      const Test6 = [0, 1, 1, 0]; //==> 6
+      const Test7 = [1, 1, 1, 1]; //==> 15
+      const Test8 = [1, 0, 1, 1]; //==> 11
+
+      let toBinary = (arr) => {
+        return arr.reduce((acc, val) => {
+          return (acc << 1) | val;
+        });
+      };
+
+      console.log(toBinary(Test1));
+      console.log(toBinary(Test2));
+      console.log(toBinary(Test3));
+      console.log(toBinary(Test4));
+      console.log(toBinary(Test5));
+      console.log(toBinary(Test6));
+      console.log(toBinary(Test7));
+      console.log(toBinary(Test8));
+    </script>
+  </body>
+</html>
