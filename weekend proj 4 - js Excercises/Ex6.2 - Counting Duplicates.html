@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex6.2 - Counting Duplicates</title>
+  </head>
+  <body>
+    <script>
+      function isNumeric(str) {
+        if (typeof str != "string") return false;
+        return !isNaN(str);
+      }
+
+      function countDuplicates(str) {
+        let arr = str.split("");
+        let result = new Map();
+        console.log(typeof arr);
+
+        arr.forEach((element) => {
+          if (isNumeric(element)) {
+            result[element] = result[element] + 1 || 1;
+          }
+          if (element === element.toLowerCase()) {
+            resutl[element] = new Array(2);
+          }
+
+          result[element.toLowerCase()] =
+            result[element.toLowerCase()] + 1 || 1;
+        });
+
+        console.log(arr);
+        console.log(result);
+      }
+
+      console.log(countDuplicates("strasda5sdA5dAsa"));
+    </script>
+  </body>
+</html>

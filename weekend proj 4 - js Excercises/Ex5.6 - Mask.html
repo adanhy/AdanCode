@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex5.6 - Mask</title>
+  </head>
+  <body>
+    <script>
+      function maskify(str) {
+        return Array.from(str)
+          .map((el, i) => {
+            if (i < str.length - 4) {
+              return "#";
+            }
+            return el;
+          })
+          .join("");
+      }
+      console.log(maskify("aaaaaasdasdasd"));
+      console.log(maskify("a"));
+      console.log(maskify("aa"));
+      console.log(maskify("aaa"));
+      console.log(maskify("asdf"));
+      console.log(maskify("asdf3"));
+      console.log(maskify("asdf32323432324243"));
+      console.log(maskify(""));
+    </script>
+  </body>
+</html>

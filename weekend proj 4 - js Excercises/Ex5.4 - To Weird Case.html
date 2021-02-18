@@ -4,32 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ex5.3 - To Camel Case</title>
+    <title>Ex5.4 - To Weird Case</title>
   </head>
   <body>
     <script>
-      const str1 = "the-stealth-warrior";
-      const str2 = "The_Stealth_Warrior";
+      const str1 = "String";
+      const str2 = "Weird string case";
 
-      function toCamelCase(str) {
+      function toWeirdCase(str) {
         let arr = str.split(/[\s_-]+/);
 
         return arr
           .map((el, index) => {
             let x = Array.from(el);
-            if (index != 0) {
-              x[0] = x[0].toUpperCase();
-            }
-            for (let i = 1; i < x.length; i++) {
-              x[i] = x[i].toLowerCase();
+
+            for (let i = 0; i < x.length; i++) {
+              i % 2 == 0
+                ? (x[i] = x[i].toUpperCase())
+                : (x[i] = x[i].toLowerCase());
             }
             return x.join("");
           })
           .join("");
       }
 
-      console.log(toCamelCase(str1));
-      console.log(toCamelCase(str2));
+      console.log(toWeirdCase(str1));
+      console.log(toWeirdCase(str2));
     </script>
   </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex5.7 - shortest words</title>
+  </head>
+  <body>
+    <script>
+      function shortestWord(str) {
+        let x = Array.from(str.split(" "));
+        return x.reduce((acc, val, index, arr) => {
+          if (index === 0) {
+            return val.length;
+          } else if (val.length > acc) {
+            return acc;
+          } else if (val.length <= acc) {
+            return val.length;
+          }
+        }, 0);
+      }
+
+      console.log(shortestWord("adadn asfa ffh tq"));
+    </script>
+  </body>
+</html>

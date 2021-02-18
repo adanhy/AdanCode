@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex5.5 - Abbreviate two words</title>
+  </head>
+  <body>
+    <script>
+      const str1 = "adan hajyahya";
+      function AbbreviateTwoWords(str) {
+        let arr = str.split(/[\s_-]+/);
+        return arr
+          .map((el, index) => {
+            let x = Array.from(el);
+
+            return x[0].toUpperCase();
+          })
+          .join(".");
+      }
+
+      console.log(AbbreviateTwoWords(str1));
+    </script>
+  </body>
+</html>

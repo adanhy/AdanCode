@@ -8,18 +8,24 @@
   </head>
   <body>
     <script>
-      const str1 = "the-stealth-warrior";
-      const str2 = "The_Stealth_Warrior";
+      const str1 = "the-stealth-warr ior";
+      const str2 = "The_Stealth_Warrior ";
 
       function toCamelCase(str) {
-        let arr = str.split(/[\s_-]+/);
-
+        let arr = str.split(/[\s_-\s]+/);
+        if (arr == "") {
+          return "";
+        }
         return arr
           .map((el, index) => {
             let x = Array.from(el);
-            if (index != 0) {
-              x[0] = x[0].toUpperCase();
+
+            if (!x[0]) {
+              return "";
             }
+
+            x[0] = x[0].toUpperCase();
+
             for (let i = 1; i < x.length; i++) {
               x[i] = x[i].toLowerCase();
             }

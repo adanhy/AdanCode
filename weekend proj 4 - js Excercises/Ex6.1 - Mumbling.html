@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex6.1 - Mumbling</title>
+  </head>
+  <body>
+    <script>
+      function accum(str) {
+        let arr = str.split("");
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
+          result = result + arr[i].toUpperCase();
+          for (let j = 0; j < i; j++) {
+            result = result + arr[i].toLowerCase();
+          }
+          if (i < arr.length - 1) {
+            result = result + "-";
+          }
+        }
+        return result;
+      }
+      console.log(accum("aBcD"));
+      console.log(accum("abcd"));
+      console.log(accum("RqaEzty"));
+      console.log(accum("cwAt"));
+    </script>
+  </body>
+</html>
