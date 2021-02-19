@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex6.3 - organize strings</title>
+  </head>
+  <body>
+    <script>
+      const str1 = "xyaabbbccccdefww";
+      const str2 = "xxxxyyyyabklmopq";
+      const a = "abcdefghijklmnopqrstuvwxyz";
+
+      function longest(a, b) {
+        let arr = Array.from(a + b);
+
+        arr = arr.sort();
+        return arr.reduce((acc, val, index, arr) => {
+          if (index == 0) {
+            return acc + val;
+          }
+          if (val != arr[index - 1]) {
+            return acc + val;
+          } else {
+            return acc;
+          }
+        }, "");
+      }
+
+      console.log(longest(str1, str2));
+      console.log(longest(a, a));
+    </script>
+  </body>
+</html>

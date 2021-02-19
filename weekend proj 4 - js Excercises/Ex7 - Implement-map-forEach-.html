@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex7 - Implement-map-forEach-filter.html</title>
+  </head>
+  <body>
+    <script>
+      const nums = [1, 3, 5, 50, 100, -80, -5];
+
+      function F1(x) {
+        return x > 10;
+      }
+
+      function F2(e, i, arr) {
+        arr[i] = e * -5;
+      }
+
+      function F3(e, i, arr) {
+        return e * -1;
+      }
+
+      Array.prototype.myfilter = function (func) {
+        let result = [];
+        for (let i = 0; i < this.length; i++) {
+          if (func(this[i], i, this)) {
+            //if the function we pass[func] returns a true value we push the value into the result
+            result.push(this[i]);
+          }
+        }
+      };
+
+      Array.prototype.myforEach = function (func) {
+        let result = [];
+        for (let i = 0; i < this.length; i++) {
+          func(this[i], i, this);
+        }
+      };
+
+      console.log(`My Filter:  ${nums.filter(F1)}`);
+      nums.myforEach(F2);
+      console.log(`My forEach: ${nums}`);
+
+      Array.prototype.myMap = function (func) {
+        let result = [];
+        for (let i = 0; i < this.length; i++) {
+          result.push(func(this[i], i, this));
+        }
+        return result;
+      };
+
+      console.log(`My Map: ${nums.myMap(F3)}`);
+    </script>
+  </body>
+</html>

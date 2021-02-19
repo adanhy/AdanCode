@@ -22,26 +22,21 @@
         let arr = str.split("");
         let counter = {};
         let cap = {};
-        console.log(arr);
+        // console.log(arr);
         arr.forEach((element) => {
           if (element == element.toLowerCase() || isNumeric(element)) {
             counter[element.toLowerCase()] = counter[element] + 1 || 1;
           }
-          if (element == element.toUpperCase() && !isNumeric(element)) {
-            counter[element.toLowerCase()] =
-              counter[element.toLowerCase()] + 1 || 1;
-            cap[element.toLowerCase()] = cap[element] + 1 || 1;
-          }
         });
-        console.log(counter);
-        console.log(cap);
+        // console.log(counter);
+        // console.log(cap);
         let filtered = Object.keys(counter)
           .filter((key) => counter[key] >= 2)
           .reduce((acc, val) => {
             acc[val] = counter[val];
             return acc;
           }, {});
-        console.log(filtered);
+        // console.log(filtered);
         let message = "";
         if (!Object.keys(filtered)) {
           message = `0 # no characters repeats more than once`;
