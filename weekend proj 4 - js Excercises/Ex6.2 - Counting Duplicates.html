@@ -13,28 +13,47 @@
         return !isNaN(str);
       }
 
-      function countDuplicates(str) {
-        let arr = str.split("");
-        let result = new Map();
-        console.log(typeof arr);
-
-        arr.forEach((element) => {
-          if (isNumeric(element)) {
-            result[element] = result[element] + 1 || 1;
-          }
-          if (element === element.toLowerCase()) {
-            resutl[element] = new Array(2);
-          }
-
-          result[element.toLowerCase()] =
-            result[element.toLowerCase()] + 1 || 1;
-        });
-
-        console.log(arr);
-        console.log(result);
+      function isNumeric(str) {
+        if (typeof str != "string") return false;
+        return !isNaN(str);
       }
 
-      console.log(countDuplicates("strasda5sdA5dAsa"));
+      function countDuplicates(str) {
+        let arr = str.split("");
+        let counter = {};
+        let cap = {};
+        console.log(arr);
+        arr.forEach((element) => {
+          if (element == element.toLowerCase() || isNumeric(element)) {
+            counter[element.toLowerCase()] = counter[element] + 1 || 1;
+          }
+          if (element == element.toUpperCase() && !isNumeric(element)) {
+            counter[element.toLowerCase()] =
+              counter[element.toLowerCase()] + 1 || 1;
+            cap[element.toLowerCase()] = cap[element] + 1 || 1;
+          }
+        });
+        console.log(counter);
+        console.log(cap);
+        let filtered = Object.keys(counter)
+          .filter((key) => counter[key] >= 2)
+          .reduce((acc, val) => {
+            acc[val] = counter[val];
+            return acc;
+          }, {});
+        console.log(filtered);
+        let message = "";
+        if (!Object.keys(filtered)) {
+          message = `0 # no characters repeats more than once`;
+        } else {
+          message += `${Object.keys(filtered).length} #\n`;
+          for (const [key, value] of Object.entries(filtered)) {
+            message += `${key} occurs ${value} times \n`;
+          }
+        }
+        return message;
+      }
+      console.log(countDuplicates("abcD1aad23"));
     </script>
   </body>
 </html>

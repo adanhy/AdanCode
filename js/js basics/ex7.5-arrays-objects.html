@@ -20,26 +20,29 @@
 
       let counter = {};
 
-    //   let newArr = array.forEach(arr.toLowerCase());
+      //   let newArr = array.forEach(arr.toLowerCase());
 
-    array.forEach(function (word_element) {
-        word_element.toLowerCase().split('').forEach(function (letter_element) {
-          return (counter[letter_element] = (counter[letter_element] || 0) + 1);
-        });
+      array.forEach(function (word_element) {
+        word_element
+          .toLowerCase()
+          .split("")
+          .forEach(function (letter_element) {
+            return (counter[letter_element] =
+              (counter[letter_element] || 0) + 1);
+          });
       });
 
       console.log(counter);
 
-    
-    let arr = Object.values(counter);
-    let arr2 = Object.keys(counter);
-    
-    // console.log(arr);
-    // console.log(arr2);
+      let arr = Object.values(counter);
+      let arr2 = Object.keys(counter);
 
-    console.log("and the most used letter is: "+  arr2[arr.indexOf(Math.max(...arr))]);
-    
+      // console.log(arr);
+      // console.log(arr2);
 
+      console.log(
+        "and the most used letter is: " + arr2[arr.indexOf(Math.max(...arr))]
+      );
     </script>
   </body>
 </html>
