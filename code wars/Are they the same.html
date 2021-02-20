@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Are they the "same"?</title>
+  </head>
+  <body>
+    <script>
+      const a = [121, 144, 19, 161, 19, 144, 19, 11];
+      const b = [
+        11 * 11,
+        121 * 121,
+        144 * 144,
+        19 * 19,
+        161 * 161,
+        19 * 19,
+        144 * 144,
+        19 * 19,
+      ];
+
+      function comp(array1, array2) {
+        // console.log(`>>array1: ${array1}`);
+        // console.log(`array2: ${array2}`);
+
+        if (!array1 || !array2) return false;
+
+        let arr2 = array2.map((e, i, arr) => {
+          return Math.sqrt(e);
+        });
+
+        arr1 = array1.sort((a, b) => {
+          return a - b;
+        });
+
+        arr2 = arr2.sort((a, b) => a - b);
+        // console.log(arr1);
+        // console.log(arr2);
+
+        for (let i = 0; i < arr1.length; i++) {
+          if (arr1[i] != arr2[i]) return false;
+        }
+        return true;
+
+        // // console.log(`>>arr2 after sqrt: ${arr2}`);
+        // let flag = false;
+
+        // if (array1.length != arr2.length) {
+        //   //   console.log("not same sz");
+        //   return false;
+        // }
+        // for (let i = 0; i < array1.length; i++) {
+        //   flag = false;
+
+        //   //   console.log(`flag is ${flag} before j loop`);
+        //   for (let j = 0; j < arr2.length; j++) {
+        //     // console.log(`i=${i} arr1: ${array1[i]} || j=${j} arr2: ${arr2[j]}`);
+        //     if (array1[i] == arr2[j]) {
+        //       //   console.log(`FOUND ${arr2[j]} location: i:${i} j:${j}`);
+        //       flag = true;
+        //     } else {
+        //       //   console.log(`${arr2[j]} not found in ${array1[i]}`);
+        //     }
+        //   }
+        //   //   console.log(`after loop flag is: ${flag}`);
+
+        //   if (!flag) {
+        //     // console.log("not found in whole array1");
+        //     return false;
+        //   }
+        // }
+
+        // for (let j = 0; j < arr2.length; j++) {
+        //   flag = false;
+        //   for (let i = 0; i < array1.length; i++) {
+        //     if (arr2[j] == array1[i]) {
+        //       flag = true;
+        //     } else {
+        //       //   console.log(`${arr2[j]} not found in ${array1[i]}`);
+        //     }
+        //   }
+
+        //   if (!flag) {
+        //     return false;
+        //   }
+        // }
+
+        // return flag;
+      }
+      console.log(comp(a, b));
+    </script>
+  </body>
+</html>

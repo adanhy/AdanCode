@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vasya - Clerk</title>
+  </head>
+
+  <body>
+    <script>
+      function tickets(peopleInLine) {
+        let bill25 = 0;
+        let bill50 = 0;
+        let bill100 = 0;
+        let bill100needChange = 0;
+        let bill50needChange = 0;
+
+        peopleInLine.forEach((element) => {
+          if (element == 25) {
+            bill25++;
+          }
+          if (element == 50) {
+            bill50++;
+            bill50needChange++;
+          }
+          if (element == 100) {
+            bill100++;
+            bill100needChange++;
+          }
+        });
+
+        while (bill50needChange > 0) {
+          if (bills25 == 0) {
+            return "NO";
+          }
+        }
+
+        let sum = bill25 + bill50 + bill100;
+
+        console.log(`$25 = ${bill25}`);
+        console.log(`$50 = ${bill50}`);
+        console.log(`$100 = ${bill100}`);
+        console.log(`all bills: ${sum}`);
+      }
+
+      tickets([25, 25, 50]); // => YES
+      tickets([25, 100]); // => NO. Vasya will not have enough money to give change to 100 dollars
+      tickets([25, 25, 50, 50, 100]); // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
+    </script>
+  </body>
+</html>
