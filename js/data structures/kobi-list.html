@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kobi list</title>
+  </head>
+  <body>
+    <script>
+      class Node {
+        constructor(item) {
+          this.head = item;
+          this.next = null;
+        }
+      }
+      class List {
+        constructor() {
+          this.head = null;
+        }
+
+        add(num) {
+          let now = this.head;
+          let node = new Node(num);
+          if (!now) {
+            now = node;
+          } else {
+            while (now.next) {
+              now = now.next;
+            }
+          }
+          now = node;
+        }
+      }
+
+      let a = new List(1);
+      console.log(a);
+      a.add(2);
+      console.log(a);
+      a.add(3);
+      console.log(a);
+    </script>
+  </body>
+</html>

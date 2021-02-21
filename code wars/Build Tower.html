@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Tower</title>
+  </head>
+  <body>
+    <script>
+      function towerBuilder(nFloors) {
+        let linelength = nFloors * 2 - 1;
+        let arr = [];
+        let line = "";
+        let dotlength;
+        let edgeslength;
+        for (let floor = 0; floor < nFloors; floor++) {
+          let line = "";
+          dotlength = dotlength + 2 || 1;
+          edgeslength = (linelength - dotlength) / 2;
+
+          for (let i = 1; i <= edgeslength; i++) {
+            line += " ";
+          }
+          for (let i = 1; i <= dotlength; i++) {
+            line += "*";
+          }
+          for (let i = 1; i <= edgeslength; i++) {
+            line += " ";
+          }
+
+          arr.push(line);
+        }
+        return arr;
+      }
+      console.log(towerBuilder(3));
+    </script>
+  </body>
+</html>

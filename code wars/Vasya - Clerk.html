@@ -10,43 +10,46 @@
   <body>
     <script>
       function tickets(peopleInLine) {
-        let bill25 = 0;
-        let bill50 = 0;
-        let bill100 = 0;
-        let bill100needChange = 0;
-        let bill50needChange = 0;
+        let bills25 = 0;
+        let bills50 = 0;
+        let bills100 = 0;
 
-        peopleInLine.forEach((element) => {
-          if (element == 25) {
-            bill25++;
+        for (let i = 0; i < peopleInLine.length; i++) {
+          console
+            .log
+            // `status before: now ${peopleInLine[i]} ---> 25: ${bills25} 50: ${bills50} 100: ${bills100}`
+            ();
+          if (peopleInLine[i] == 25) {
+            bills25++;
+          } else if (peopleInLine[i] == 50) {
+            bills50++;
+            if (bills25 == 0) {
+              return "NO";
+            }
+            if (bills25 > 0) {
+              bills25--;
+            }
+          } else if (peopleInLine[i] == 100) {
+            bills100++;
+            if (bills50 > 0 && bills25 > 0) {
+              bills50--;
+              bills25--;
+            } else if (bills50 == 0 && bills25 > 2) {
+              bills25 = bills25 - 3;
+            } else {
+              return "NO";
+            }
           }
-          if (element == 50) {
-            bill50++;
-            bill50needChange++;
-          }
-          if (element == 100) {
-            bill100++;
-            bill100needChange++;
-          }
-        });
-
-        while (bill50needChange > 0) {
-          if (bills25 == 0) {
-            return "NO";
-          }
+          console
+            .log
+            // `status after: now ${peopleInLine[i]} ---> 25: ${bills25} 50: ${bills50} 100: ${bills100}`
+            ();
         }
-
-        let sum = bill25 + bill50 + bill100;
-
-        console.log(`$25 = ${bill25}`);
-        console.log(`$50 = ${bill50}`);
-        console.log(`$100 = ${bill100}`);
-        console.log(`all bills: ${sum}`);
+        return "YES";
       }
-
-      tickets([25, 25, 50]); // => YES
-      tickets([25, 100]); // => NO. Vasya will not have enough money to give change to 100 dollars
-      tickets([25, 25, 50, 50, 100]); // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
+      console.log(tickets([25, 25, 50])); // => YES
+      console.log(tickets([25, 100])); // => NO. Vasya will not have enough money to give change to 100 dollars
+      console.log(tickets([25, 25, 50, 50, 100])); // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
     </script>
   </body>
 </html>

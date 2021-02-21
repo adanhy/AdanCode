@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duplicate Encoder</title>
+  </head>
+  <body>
+    <script>
+      function duplicateEncode(word) {
+        let arr = word.split("");
+        let order = {};
+
+        for (let i = 0; i < arr.length; i++) {
+          order[arr[i].toLowerCase()] = order[arr[i].toLowerCase()] + 1 || 1;
+        }
+
+        // console.log(order);
+        return arr.reduce((acc, v, i) => {
+          //   console.log(v);
+          //   console.log(v.toUpperCase());
+
+          if (order[v] > 1) {
+            return acc + `)`;
+          } else if (v == v.toUpperCase() && v != v.toLowerCase()) {
+            if (order[v.toLowerCase()] > 1) return acc + `)`;
+          }
+          return acc + `(`;
+        }, "");
+        // console.log(arr);
+        // console.log(order);
+      }
+
+      console.log(duplicateEncode(`(( @`)); //))((
+
+      //   let s = "Srialkf";
+      //   if (!s.matches(".*[^a-z].*")) {
+      //     console.log("found");
+      //   }
+    </script>
+  </body>
+</html>

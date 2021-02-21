@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valid Braces</title>
+  </head>
+  <body>
+    <script>
+      function validBraces(braces) {
+        let arr = [];
+        let list = {
+          "(": ")",
+          "[": "]",
+          "{": "}",
+        };
+
+        for (let i = 0; i < braces.length; i++) {
+          if (braces[i] == "[" || braces[i] == "(" || braces[i] == "{") {
+            arr.push(braces[i]);
+          } else {
+            let edge = arr.pop();
+            if (braces[i] != list[edge]) {
+              return false;
+            }
+          }
+        }
+        if (arr.length == 0) return true;
+      }
+
+      console.log(validBraces(`11`));
+      console.log(validBraces("(){}[]"));
+      console.log(validBraces("(}"));
+      console.log(validBraces("[(])"));
+      console.log(validBraces("[({})](]"));
+    </script>
+  </body>
+</html>
