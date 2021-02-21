@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product of consecutive Fib numbers</title>
+  </head>
+  <body>
+    <script>
+      function productFib(prod) {
+        let arr = [];
+        arr.push(0);
+        arr.push(1);
+        let fib = 2;
+        while (arr[arr.length - 1] * arr[arr.length - 2] < prod) {
+          arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+        }
+        return [
+          arr[arr.length - 2],
+          arr[arr.length - 1],
+          arr[arr.length - 1] * arr[arr.length - 2] == prod,
+        ];
+      }
+
+      console.log(productFib(4895));
+    </script>
+  </body>
+</html>
