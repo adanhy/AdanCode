@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.1-font-size</title>
+  </head>
+  <body>
+    <!-- <button type="button" onclick="smallerFont()">-</button>
+    <span id="txt" style="font-size: 50px"
+      >The quick brown fox jumps over the lazy dog</span
+    >
+    <button type="button" onclick="biggerFont()">+</button> -->
+
+    <span id="txt2">The quick brown fox jumps over the lazy dog</span>
+
+    <script>
+      let el = document.getElementById("txt2");
+      console.log(`font size is:${el.style.fontSize}`);
+
+      function biggerFont() {
+        let el = document.getElementById("txt");
+        currentSize = parseFloat(el.style.fontSize);
+        if (currentSize < 100) {
+          el.style.fontSize = currentSize + 1 + `px`;
+        }
+      }
+
+      function smallerFont() {
+        let el = document.getElementById("txt");
+        currentSize = parseFloat(el.style.fontSize);
+        if (currentSize > 6) {
+          el.style.fontSize = currentSize - 1 + `px`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.2-text_area</title>
+  </head>
+  <body>
+    <div>tell me more about yourself:</div>
+    <div><textarea id="area" rows="10" cols="100"></textarea></div>
+
+    <button onclick="check()">click here!</button>
+    <div id="alert-box" style="visibility: hidden; color: red">
+      short message, please add more
+    </div>
+
+    <script>
+      function check() {
+        let el = document.getElementById("area");
+        if (el.value.length < 100) {
+          document.getElementById("alert-box").style.visibility = `visible`;
+        }
+      }
+    </script>
+  </body>
+</html>
