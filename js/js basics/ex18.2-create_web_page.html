@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.2-create_web_page</title>
+  </head>
+  <body>
+    <script>
+      let header = document.createElement(`h1`);
+      header.textContent = `Hello appleseeds bootcamp`;
+      header.style.color = `blue`;
+      header.style.textAlign = `center`;
+      document.body.appendChild(header);
+
+      let article = document.createElement(`div`);
+      article.style.background = `#454545`;
+      article.style.border = "1px solid lime";
+      article.style.height = "600px";
+      article.style.width = `600px`;
+      article.style.textAlign = `center`;
+
+      let pic = document.createElement(`img`);
+      pic.src = `https://mackenzienz.com/wp-content/uploads/2018/03/SH-Mt-Cook-2.jpg`;
+      pic.style.width = `100%`;
+      article.appendChild(pic);
+
+      let articleHeader = document.createElement(`h2`);
+      articleHeader.textContent = `kia ora appleseeds`;
+      articleHeader.style.color = `white`;
+      articleHeader.style.alignContent = `center`;
+      article.appendChild(articleHeader);
+
+      let sometxt = document.createElement(`p`);
+
+      sometxt.textContent = `kdljhadlkfj lkadjf kladjfkadjf lkadjf klf kd kljfadofpueqpofasf asf safsa fsfa sfa fsa sfa sfasfasfa  safa sf asf asfa sfa sfas fas eqt qe asf sadg qasfg adg jqpoefu pqef [qepfad]`;
+      sometxt.style.color = `yellow`;
+
+      article.appendChild(sometxt);
+      document.body.appendChild(article);
+    </script>
+  </body>
+</html>

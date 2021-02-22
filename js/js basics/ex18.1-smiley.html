@@ -7,35 +7,33 @@
     <title>18.1-smiley</title>
   </head>
   <body>
-    <div>How many smileys do you want to see?</div>
+    <h2>How Many Smileys do you want?</h2>
     <input type="text" id="txt" />
     <button id="btn" onclick="action()">Click Me</button>
     <span id="error-msg" style="visibility: hidden; color: red"
       >please enter a valid number!</span
     >
 
-    <div id="container"></div>
-
     <script>
       function action() {
         let item = document.querySelector(`#txt`);
-
         console.log(parseInt(item.value));
+        const container = document.createElement(`div`);
+        container.classList.add(`wraper`);
+
         if (!parseInt(item.value)) {
           document.querySelector(`#error-msg`).style.visibility = "visible";
         }
         if (parseInt(item.value)) {
           document.querySelector(`#error-msg`).style.visibility = "hidden";
-          var ele = document.createElement("DIV");
-          var img = document.createElement("IMG");
-          img.src =
-            "https://cdn.icon-icons.com/icons2/1576/PNG/512/3561837-emoji-emoticon-emoticons-expression-suspicious_107881.png";
-          img.style.width = 50 + `px`;
-
-          for (var i = 0; i < item.value; i++) {
-            console.log(i);
-            document.body.appendChild(img);
+          for (let i = 0; i < item.value; i++) {
+            let img = document.createElement(`img`);
+            img.src =
+              "https://cdn.icon-icons.com/icons2/1576/PNG/512/3561837-emoji-emoticon-emoticons-expression-suspicious_107881.png";
+            img.style.width = 100 + `px`;
+            container.appendChild(img);
           }
+          document.body.appendChild(container);
         }
       }
     </script>
