@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Pig Latin</title>
+  </head>
+  <body>
+    <script>
+      function pigIt(str) {
+        if (str == ``) return ``;
+        let arr = str.split(" ");
+
+        let proc = arr.map((v, i, arr) => {
+          let temp = v.split("");
+          temp = temp.reduce((acc, va, j, array) => {
+            // console.log(j);
+            let rgx = /^[.,:!?]/;
+            if (va.match(rgx)) {
+              return acc + va;
+            }
+
+            if (j == 0 && j == array.length - 1) {
+              return acc + va + `ay`;
+            } else if (j == 0) return acc;
+
+            //   return acc + va;
+
+            if (j >= 0) {
+              if (j == array.length - 1) {
+                // console.log(`acc: ${acc} va: ${va} array[0]: ${array[0]} `);
+                if (array[0].match(rgx)) return acc + va + "ay";
+                return acc + va + array[0] + "ay";
+              }
+              return acc + va;
+            }
+            // return acc;
+          }, ``);
+          //   temp = temp + `ay`;
+          return temp;
+        });
+        return proc.join(" ");
+      }
+
+      console.log(pigIt("Pig !latin is cool"));
+    </script>
+  </body>
+</html>
