@@ -40,25 +40,25 @@ btn.style.padding = `10px`;
 
 document.body.append(btn);
 
+container.addEventListener("input", (e) => {
+  console.log(e);
+  e.target.nextSibling && e.target.value.length
+    ? e.target.nextSibling.focus()
+    : null;
+});
+
 container.addEventListener("paste", (event) => {
-  console.log(`inside event`);
   console.log(event.target.parentElement.children);
   let paste = (event.clipboardData || window.clipboardData).getData(`text`);
   console.log(paste.length);
-  if (paste.length == `6`) {
-    console.log(`length is 6`);
+  if (paste.length <= `6`) {
     for (let i = 0; i < paste.length; i++) {
       console.log(paste[i]);
 
-      event.target.parentElement.children[i].textContent = paste[i];
+      event.target.parentElement.children[i].value = paste[i];
       const selection = window.getSelection();
       console.log(selection);
       if (!selection.rangeCount) return false;
-
-      //   console.log(event.target.parentElement.children[i].textContent);
     }
   }
-
-  const selection = window.getSelection();
-  if (!selection.rangeCount) return false;
 });
