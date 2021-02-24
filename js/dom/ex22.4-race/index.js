@@ -27,6 +27,7 @@ let player1 = document.querySelector(`#player1-race`);
 let car1 = document.querySelector(`#player1-race > .active`);
 let player2 = document.querySelector(`#player2-race`);
 let car2 = document.querySelector(`#player2-race > .active`);
+
 document.addEventListener("keydown", (ev) => {
   if (ev.key == `ArrowUp` && car1.nextElementSibling) {
     car1.nextElementSibling.classList.add(`active`);
