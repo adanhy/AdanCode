@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex27-pini Car Speed</title>
+  </head>
+  <body>
+    <script>
+      function Car(cartype, speed) {
+        this.cartype = cartype;
+        this.speed = speed;
+      }
+
+      Car.prototype.accelerate = function () {
+        this.speed += 10;
+        console.log(`${this.cartype} is moving at ${this.speed} km/h`);
+      };
+      Car.prototype.brake = function () {
+        this.speed -= 5;
+        console.log(`${this.cartype} is moving at ${this.speed} km/h`);
+      };
+
+      let c = new Array();
+      Array.from();
+
+      let a = new Car(`bimba`, 50);
+      a.accelerate();
+      a.brake();
+
+      let b = new Car(`sosita`, 80);
+      b.brake();
+      b.accelerate();
+    </script>
+  </body>
+</html>

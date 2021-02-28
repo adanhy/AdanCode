@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>27.2-pokeman</title>
+  </head>
+  <body>
+    <script>
+      function Pokemon(pokemonName, pokemonType, pokemonAttackList) {
+        this.name = pokemonName;
+        this.type = pokemonType;
+        this.attackList = pokemonAttackList;
+      }
+
+      Bulbasaur = new Pokemon(`Bulbasaur`, `grass`, {
+        1: `Razor Leaf`,
+        2: `Growl`,
+        3: `Sunbeam`,
+      });
+      Charmander = new Pokemon(`Charmander`, `fire`, {
+        1: `Ember`,
+        2: `Quick Attack`,
+        3: `Headbutt`,
+      });
+      Zapdos = new Pokemon(`Zapdos`, `electric`, {
+        1: `Thunder Shock`,
+        2: `Fly`,
+        3: `Sonic Waves`,
+      });
+
+      Pokemon.prototype.callPokemon = function () {
+        console.log(`I choose You, ${this.name}!`);
+      };
+
+      Pokemon.prototype.attack = function (attackNum) {
+        console.log(`${this.name} used ${this.attackList[attackNum]}!`);
+      };
+
+      Bulbasaur.callPokemon();
+      Bulbasaur.attack(1);
+      Charmander.callPokemon();
+      Charmander.attack(1);
+      Zapdos.callPokemon();
+      Zapdos.attack(3);
+    </script>
+  </body>
+</html>

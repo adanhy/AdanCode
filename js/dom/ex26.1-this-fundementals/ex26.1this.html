@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //             Question 1:
+      //   In your own words what will this point to and why?(Note
+      //   this is the global scope)
+      console.log(this);
+
+      // log the bowser window because we log this in the global scope
+
+      //   =======================================================================
+
+      //   Question 2:
+      //   a. In your own words what will this point to and why.
+      //   b. How can you fix this code.
+      const myObj = {
+        name: "Timmy",
+        greet: () => {
+          console.log(`Hello ${this.name}`);
+        },
+      };
+      myObj.greet();
+
+      // greet is a function inside myObj so the result will be the value of the name key = timmy.
+
+      //   =======================================================================
+
+      //   Question 3:
+      //   In your own words what will this point to and why?
+      const myFuncDec = function () {
+        console.log(this);
+      };
+
+      // this points to the window
+      //   =======================================================================
+
+      //   Question 4:
+      //   In your own words what will this point to and why?
+      const myFuncArrow = () => {
+        console.log(this);
+      };
+      myFuncArrow();
+
+      //   myFuncArrow is an arrow function so the this is determined on the decleration of the function and equals to the windown.
+
+      //   Question 5:
+      //   a. In your own words what will this point to and why.
+      //   b. How can you fix this code.
+      document.querySelector(".element").addEventListener(() => {
+        console.log(this);
+      });
+
+      //points to the left of the dot => the selected element from the querryselector.
+    </script>
+  </body>
+</html>
