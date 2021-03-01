@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30.2-promise_chaining</title>
+  </head>
+  <body>
+    <script>
+      const arr1 = [`hello`, `adan`, `small`, `letters`];
+      const arr2 = [`hello`, `error`, `array`, 0, undefined];
+
+      function makeAllCaps(arr) {
+        const p = new Promise((res, rej) => {
+          for (let i = 0; i < arr.length; i++) {
+            if (typeof arr[i] !== `string`) rej(`array is contaminated1!`);
+            arr[i] = arr[i].toUpperCase();
+          }
+          res(arr);
+        });
+
+        p.then(
+          function (v) {
+            console.log(v);
+          },
+          function (error) {
+            console.log(error);
+          }
+        );
+      }
+
+      makeAllCaps(arr1);
+      makeAllCaps(arr2);
+
+      function sortWords(arr) {
+        let newArr;
+        const p = new Promise(function (res, rej) {
+          for (let i = 0; i < arr.length; i++) {
+            if (typeof arr[i] !== `string`)
+              rej(`array is contaminated2!!!!!#$`);
+          }
+          newArr = arr.sort();
+          res(newArr);
+        });
+
+        p.then((v) => {
+          console.log(v);
+        }).catch((error) => {
+          console.log(`error msg: ${error}`);
+        });
+      }
+
+      sortWords(arr1);
+      sortWords(arr2);
+    </script>
+  </body>
+</html>
