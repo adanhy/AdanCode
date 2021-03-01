@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>28.1-who_is_stronger</title>
+  </head>
+  <body>
+    <script>
+      const hero = {
+        health: 5,
+        power: 68,
+        getStrength: function () {
+          if (this.health <= 5) {
+            return this.power - 10;
+          } else return this.power;
+        },
+      };
+
+      function whoIsStronger(getStrength) {
+        const myStrength = 82;
+        if (getStrength() < myStrength) {
+          return "I am stronger";
+        } else return "You are stronger";
+      }
+
+      console.log(whoIsStronger(hero.getStrength.bind(hero)));
+
+      // the problem with the code: when we call the getStrength function inside
+      //  of hero object, this is pointing to the place where it was invoked => inside of whoIsStronger.
+      // we dont want that! we want the comparison between the myStrength = 82 inside the object
+      //  with the value the function getStrength function passed to it.
+      // to fix that we need to bind hero.getStrength to the hero object so when we
+      //  invoke it inside of whoIsStronger the this of the getStrength function will point at hero
+      // object and not the whoIsStronger scope.
+    </script>
+  </body>
+</html>
