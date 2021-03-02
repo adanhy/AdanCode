@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex34.1-star_wars</title>
+  </head>
+  <body>
+    <script>
+      const api = `https://swapi.dev/api/people/ `;
+      let dataArr = [];
+      function handleError(e) {
+        console.log(e);
+      }
+
+      const getThem = async (num) => {
+        for (let i = 1; i <= num; i++) {
+          const personResponse = await fetch(api + i + `/`);
+          const personObj = await personResponse.json();
+          const wrldResponse = await fetch(personObj.homeworld);
+          const wrld = await wrldResponse.json();
+
+          dataArr.push({
+            name: personObj.name,
+            height: personObj.height,
+            hair: personObj.hair_color,
+            planet: { name: wrld.name, population: wrld.population },
+          });
+        }
+
+        showStars();
+      };
+
+      function Headlines() {
+        let tr = document.createElement(`tr`);
+        tr.innerHTML = `<td>Name</td>
+                          <td>Height</td>
+                          <td>Hair Color</td>
+                          <td>Planet Name</td>
+                          <td>Planet Population</td>`;
+
+        document.querySelector(`table`).appendChild(tr);
+      }
+
+      const showStars = () => {
+        let tab = document.createElement(`table`);
+        let header = document.createElement(`h1`);
+        header.textContent = `Star Wars AJAX`;
+
+        document.body.appendChild(header);
+        document.body.appendChild(tab);
+        Headlines();
+        for (const p of dataArr) {
+          tab.innerHTML += `<td>${p.name}</td>
+                          <td>${p.height}</td>
+                          <td>${p.hair}</td>
+                          <td>${p.planet.name}</td>
+                          <td>${p.planet.population}</td>`;
+        }
+      };
+
+      getThem(10);
+    </script>
+  </body>
+</html>
