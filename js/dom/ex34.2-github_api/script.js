@@ -45,8 +45,11 @@ async function getProfile(card) {
       displayIssue(`invalid input!`);
       return;
     }
-    const gitResp = await fetch(`${github_url}${card}`);
 
+    const gitResp = await fetch(`${github_url}${card}`);
+    if (!gitResp.ok) {
+      throw new Error(gitResp.message);
+    }
     const cardPromise = await gitResp.json();
 
     if (cardPromise.message === `Not Found`) {

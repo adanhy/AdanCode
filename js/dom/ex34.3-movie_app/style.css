@@ -1,0 +1,50 @@
+#lbl {
+  visibility: hidden;
+  color: red;
+}
+
+#searchbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#lbl-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#movie-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  /* text-align: left; */
+  margin: 1rem;
+  animation: unvil 0.5s ease-in-out;
+}
+
+@keyframes unvil {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+}
+
+#card-wrapper {
+  margin-top: 2rem;
+}
