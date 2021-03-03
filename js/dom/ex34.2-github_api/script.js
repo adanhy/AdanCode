@@ -1,29 +1,63 @@
 const github_url = `https://api.github.com/users/`;
 
-document.querySelector(`#btn`).addEventListener(`click`, () => {
-  getProfile(document.querySelector(`#txt`).value);
+const history = {};
+
+function handleError(e) {
+  console.log(e);
+}
+
+function displayIssue(txt) {
+  let msg = document.querySelector(`#lbl`);
+  msg.textContent = txt;
+  msg.style.visibility = `visible`;
+}
+
+function clearIssue() {
+  let msg = document.querySelector(`#lbl`);
+  msg.textContent = "";
+  msg.style.visibility = `hidden`;
+}
+
+function validateInput(card) {}
+
+document.querySelector(`#btn`).addEventListener(`click`, async () => {
+  clearIssue();
+  await getProfile(document.querySelector(`#txt`).value);
+  document.querySelector(`#lbl`).style.visibility = `hidden`;
+  document.querySelector(`#txt`).value = "";
 });
 
-document.querySelector(`#btn`).addEventListener(`click`, () => {
-  document.querySelector(`#lbl`).style.visibility = `hidden`;
+document.querySelector("#txt").addEventListener("keypress", async (e) => {
+  clearIssue();
+  if (e.key === "Enter") {
+    await getProfile(document.querySelector(`#txt`).value);
+    document.querySelector(`#txt`).value = "";
+  }
 });
 
 async function getProfile(card) {
   try {
+    if (history[card]) {
+      displayIssue(`already searched!`);
+      return;
+    }
+    if (card.split(` `).length > 1 || card.length == 0) {
+      displayIssue(`invalid input!`);
+      return;
+    }
     const gitResp = await fetch(`${github_url}${card}`);
 
     const cardPromise = await gitResp.json();
 
     if (cardPromise.message === `Not Found`) {
-      let msg = document.querySelector(`#lbl`);
-      msg.textContent = `profile not found`;
-      msg.style.visibility = `visible`;
+      displayIssue(`profile not found`);
     } else {
       const box = document.createElement(`div`);
       box.classList.add(`cardbox`);
 
       const pic = document.createElement(`img`);
       pic.src = cardPromise.avatar_url;
+      pic.alt = `${cardPromise.login} profile pic`;
 
       const lbl_name = document.createElement(`label`);
       lbl_name.classList.add(`info-label`);
@@ -55,8 +89,12 @@ async function getProfile(card) {
 
       let cards = document.querySelector(`#card-wrapper`);
       cards.appendChild(box);
+      history[card] = history[card] + 1 || 1;
+      document.querySelector(`#txt`).focus();
     }
   } catch (e) {
-    console.log(e);
+    handleError(e);
   }
 }
+
+document.querySelector(`#txt`).focus();
