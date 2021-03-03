@@ -1,0 +1,48 @@
+#lbl {
+  visibility: hidden;
+  color: red;
+}
+
+#searchbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#lbl-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cardbox {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid red;
+  align-items: center;
+  margin: 1rem;
+  animation: unvil 0.5s ease-in-out;
+}
+
+@keyframes unvil {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+}
+
+#card-wrapper {
+  margin-top: 2rem;
+}
