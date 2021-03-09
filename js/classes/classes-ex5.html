@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Point {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+        }
+
+        getX() {
+          return this.x;
+        }
+        getY() {
+          return this.y;
+        }
+
+        addToX(x) {
+          this.x += x;
+        }
+        addToY(y) {
+          this.y += y;
+        }
+
+        setX(x) {
+          this.x = x;
+        }
+
+        setY(y) {
+          this.y = y;
+        }
+
+        addPoint(p) {
+          this.x = p.getX();
+          this.y = p.getY();
+        }
+
+        isSame(p) {
+          if (this.x === p.getX() && this.y === p.getY()) return true;
+          return false;
+        }
+
+        print() {
+          console.log(`x: ${this.x} y: ${this.y}`);
+        }
+      }
+
+      class PointWorld {
+        constructor() {
+          this.points = [];
+        }
+
+        sortByY() {
+          this.points.sort((a, b) => {
+            return a.getY() - b.getY();
+          });
+        }
+
+        handleDoubles() {
+          for (let i = 0; i < this.points.length; i++) {
+            for (let j = i + 1; i < this.points.length; j++) {}
+          }
+        }
+
+        sumOfX() {
+          let total = 0;
+          for (let i = 0; i < this.points.length; i++) {
+            total += this.points[i].getX();
+          }
+          return total;
+        }
+
+        hasPoint(p) {
+          for (let i = 0; i < this.points.length; i++) {
+            if (
+              p.getX() === this.points[i].getX() &&
+              p.getY() === this.points[i].getY()
+            )
+              return p;
+          }
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Room {
+        constructor(roomId, level, amount) {
+          this.roomId = roomId;
+          this.level = level;
+          this.amount = amount;
+          this.isFree = false;
+        }
+
+        occupyRoom(num) {
+          if (num <= amount) {
+            this.isFree = true;
+            return true;
+          }
+          return false;
+        }
+
+        print() {
+          console.log(
+            `Room Id: ${this.roomId}, Level: ${this.level}, Max: ${this.amount} , available?: ${this.isFree}`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

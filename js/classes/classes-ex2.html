@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        constructor(brand, speed) {
+          this.brand = brand;
+          this.speed = speed;
+        }
+        getBrand() {
+          return this.brand;
+        }
+        getSpeed() {
+          return this.speed;
+        }
+
+        print() {
+          console.log(`brand: ${this.brand}, speed: ${this.speed}`);
+        }
+
+        setSpeed(spd) {
+          this.speed = spd;
+        }
+      }
+
+      const cars = [
+        new Car(`Tesla`, 200),
+        new Car(`Honda`, 150),
+        new Car(`Fiat`, 100),
+        new Car(`Mazda`, 220),
+      ];
+
+      const max = cars.reduce((acc, v, i) => {
+        if (i == 0) return v;
+        else {
+          if (acc.getSpeed() > v.getSpeed()) return acc;
+          else return v;
+        }
+      });
+
+      console.log(max);
+
+      function SortCarsBySpeed(arr) {
+        return arr.sort((a, b) => {
+          if (a.getSpeed() > b.getSpeed()) return 1;
+          return -1;
+        });
+      }
+
+      const sorted = SortCarsBySpeed(cars);
+
+      console.log(sorted);
+    </script>
+  </body>
+</html>

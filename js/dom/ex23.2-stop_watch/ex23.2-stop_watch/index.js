@@ -16,7 +16,8 @@ document.querySelector("#start").addEventListener("click", (e) => {
     let minutes = ("0" + elapsed.getMinutes()).slice(-2);
     let milisec = ("0" + parseInt(elapsed.getMilliseconds() / 10)).slice(-2);
     const time = `${minutes}:${sec}:${milisec}`;
-    document.querySelector("#timer").innerText = time;
+
+    document.querySelector("#lbl").innerText = time;
   }, 10);
 });
 

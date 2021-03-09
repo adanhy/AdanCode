@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class sortNumber {
+        constructor() {
+          this.numList = [];
+        }
+
+        addNum(num) {
+          if (this.isPrime(num) && this.numList.indexOf(num) < 0) {
+            this.numList.push(num);
+            this.numList.sort((a, b) => {
+              return a - b;
+            });
+            return true;
+          }
+          return false;
+        }
+
+        removeNum(num) {
+          const i = this.numList.indexOf(num);
+          if (i >= 0) {
+            this.numList.splice(i, 1);
+            return true;
+          }
+          return false;
+        }
+
+        getAll() {
+          return this.numList;
+        }
+
+        print() {
+          console.log(this);
+        }
+
+        isPrime(num) {
+          for (var i = 2; i < num; i++) if (num % i === 0) return false;
+          return num > 1;
+        }
+
+        share(ray) {
+          // console.log(ray);
+          return this.numList.reduce((acc, v, k) => {
+            for (let i = 0; i < ray.getAll().length; i++) {
+              if (v == ray.getAll()[i]) {
+                return acc + 1;
+              }
+            }
+            return acc;
+          }, 0);
+        }
+
+        union(ray) {
+          const result = new sortNumber();
+
+          for (let i = 0; i < ray.getAll().length; i++) {
+            if (result.getAll().indexOf(ray.getAll()[i]) < 0) {
+              result.getAll().push(ray.getAll()[i]);
+            }
+          }
+          for (let i = 0; i < this.numList.length; i++) {
+            if (result.getAll().indexOf(this.numList[i]) < 0) {
+              result.getAll().push(this.numList[i]);
+            }
+          }
+
+          return result;
+        }
+      }
+
+      const n = new sortNumber();
+      n.addNum(5);
+      n.addNum(13);
+      n.addNum(17);
+      n.addNum(37);
+
+      n.print();
+
+      const m = new sortNumber();
+
+      m.addNum(5);
+      m.addNum(37);
+      m.addNum(2);
+
+      console.log(n.share(m));
+      console.log(n.union(m));
+    </script>
+  </body>
+</html>
