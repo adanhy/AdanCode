@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crud node js</title>
+  </head>
+  <body>
+    <script>
+      let tdList = [];
+
+      function addItem(id, taskName, isCompleted) {
+        for (let i = 0; i < tdList.length; i++) {
+          if (tdList[i].id === id) return false;
+        }
+        tdList.push({ id, taskName, isCompleted });
+        return true;
+      }
+
+      function DeleteItem(id) {
+        for (let i = 0; i < tdList.length; i++) {
+          if (tdList[i].id == id) {
+            tdList.splice(i, 1);
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function markAsDone(id) {
+        for (let i = 0; i < tdList.length; i++) {
+          if (tdList[i].id === id) {
+            tdList[i].isCompleted = true;
+            return true;
+          }
+          return false;
+        }
+      }
+
+      function markAsUndone(id) {
+        for (let i = 0; i < tdList.length; i++) {
+          if (tdList[i].id === id) {
+            tdList[i].isCompleted = false;
+            return true;
+          }
+          return false;
+        }
+      }
+
+      function List() {
+        return tdList.sort((a, b) => {
+          if (a.isCompleted && !b.isCompleted) return 1;
+          if (!a.isCompleted && b.isCompleted) return -1;
+          if (a.isCompleted && b.isCompleted) return 0;
+          if (!a.isCompleted && !b.isCompleted) return 0;
+        });
+      }
+
+      addItem(1, "first task", false);
+      addItem(1, "first task", false);
+      addItem(5, " task", true);
+      addItem(6, "adfaf", false);
+      addItem(6, "334a", true);
+      addItem(7, "asdbgjyrrt", false);
+      addItem(10, "assfagsd", false);
+
+      console.log(DeleteItem(6));
+
+      console.log(List());
+    </script>
+  </body>
+</html>
